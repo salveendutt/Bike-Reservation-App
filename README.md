@@ -1,7 +1,7 @@
 # Bike-Reservation-App
 
 ### What to do after installing Django Project
-1. Go to the root directory
+1. Go to the project directory
 2. Enter virtual environment <br>
    Windows:
    ```
