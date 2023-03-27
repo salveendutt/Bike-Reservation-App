@@ -87,7 +87,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',  # database
         'NAME': 'BikeRent',  # database name
-        'HOST': '192.168.111.135', # server address
+        'HOST': '127.0.0.1', # server address
         'PORT': 3306,
         'USER':'root',
         'PASSWORD':'123456',

@@ -15,9 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from bike_app import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path("welcome/", views.Welcome_page),
     path('', include('bike_app.urls', namespace='bike_app')),  # If it is no path => Going bike_app/urls.py
     # If we want to add something, then better add urls in bike_app/urls.py
 ]

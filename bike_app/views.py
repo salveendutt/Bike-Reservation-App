@@ -5,3 +5,7 @@ from django.http import HttpResponse
 
 def home(request):
     return render(request, 'home.html')
+
+def Welcome_page(request):
+    #find it on templates DIR of app DIR
+    return render(request, "welcome.html")
