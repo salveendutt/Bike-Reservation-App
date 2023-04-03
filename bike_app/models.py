@@ -33,10 +33,16 @@ class Complaint(models.Model):
 
 
 class Reservation(models.Model):
+    BIKE_CHOICES = [
+        ('bike1', 'Bike 1'),
+        ('bike2', 'Bike 2'),
+        ('bike3', 'Bike 3')
+    ]
     Reservation_id = models.CharField(primary_key=True, max_length=20)  #Reservation Id
     Reservation_DateRequest = models.CharField(max_length=30)           #Reservation RequestStartDate
     Reservation_DateEnd = models.CharField(max_length=30)               #Reservation RequestEndDate
-    Reservation_Bike = models.CharField(max_length=20)                  #bike Id
+    Reservation_Bike = models.CharField(max_length=20, choices=BIKE_CHOICES) #bike Id
     Reservation_status = models.CharField(max_length=20)                #status
+    Reservation_Number = models.CharField(max_length=5)
 
 
