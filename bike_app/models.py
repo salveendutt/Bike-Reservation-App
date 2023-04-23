@@ -14,12 +14,21 @@ class CustomUser(AbstractBaseUser):
 
 
 class BikeInfo(models.Model):
+<<<<<<< Updated upstream:bike_app/models.py
     BikeCode = models.CharField(primary_key=True, max_length=20)    #Bike Id
     BikeName = models.CharField(max_length=20)                      #Bike name
     BikeType = models.CharField(max_length=20)                      #Bike Type
     Descriptions = models.CharField(max_length=300)                 #Bike Description
 
 
+=======
+    BikeCode = models.CharField(primary_key=True, max_length=20)    # Bike Id
+    BikeName = models.CharField(max_length=20)                      # Bike name
+    BikeType = models.CharField(max_length=20)                      # Bike Type
+    Descriptions = models.CharField(max_length=300)                 # Bike Description
+    isFix=models.BooleanField(default=False)                          # Bike fix or not
+"""
+>>>>>>> Stashed changes:Desktop/SE2_REPO/bike_app/models.py
 class AdminInfo(models.Model):
     admin_id = models.CharField(max_length=20,unique=True)                        #Admin Id
     admin_email = models.CharField(max_length=20)                   #Admin Email

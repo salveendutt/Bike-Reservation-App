@@ -1,0 +1,125 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+	<title>Bikes List</title>
+    <style>
+        body {
+            background-color: rgb(205, 215, 235);
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+			padding: 8px;
+			text-align: left;
+			border: 1px solid black;
+		}
+		th {
+			background-color: #dddddd;
+		}
+		.is-fixed {
+			background-color: #ff9999;
+		}        
+    </style>
+</head>
+<body>
+	<h1>List of Bikes</h1>
+    <table>
+		<thead>
+			<tr>
+				<th>BikesCode</th>
+				<th>isFixed</th>
+			</tr>
+		</thead>
+		<tbody id="bikes-list"></tbody>
+	</table>
+	<ul id="bikes-list"></ul>
+	
+	<script>
+		const bikes = [
+            {Bikecode:1,isFixed:false},
+            {Bikecode:2,isFixed:false},
+            {Bikecode:3,isFixed:true}
+		];
+		
+		const bikesList = document.getElementById('bikes-list');
+		
+		bikes
+			.filter(bike => !bike.isFixed)
+			.forEach(bike => {
+				const tr = document.createElement('tr');
+				const bikecodeTd = document.createElement('td');
+				bikecodeTd.textContent = bike.Bikecode;
+				tr.appendChild(bikecodeTd);
+				const isfixedTd = document.createElement('td');
+				isfixedTd.textContent = bike.isFixed;
+				tr.appendChild(isfixedTd);
+                if(bike.isFixed){
+                    isfixedTd.classList.add('is-fixed');
+                }
+				bikesList.appendChild(tr);
+			});
+	</script>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Bikes List</title>
+	<style>
+		table {
+			border-collapse: collapse;
+			width: 100%;
+		}
+		th, td {
+			padding: 8px;
+			text-align: left;
+			border: 1px solid black;
+		}
+		th {
+			background-color: #dddddd;
+		}
+		.is-fixed {
+			background-color: #ff9999;
+		}
+	</style>
+</head>
+<body>
+	<h1>List of Bikes</h1>
+    <table>
+		<thead>
+			<tr>
+				<th>Bikecode</th>
+				<th>isFixed</th>
+			</tr>
+		</thead>
+		<tbody id="bikes-list"></tbody>
+	</table>
+	
+	<script>
+		const bikes = [
+			{ Bikecode: 1, isFixed: false },
+			{ Bikecode: 2, isFixed: false },
+			{ Bikecode: 3, isFixed: true },
+			{ Bikecode: 4, isFixed: true }
+		];
+		
+		const bikesList = document.getElementById('bikes-list');
+		
+		bikes.forEach(bike => {
+			const tr = document.createElement('tr');
+			const bikecodeTd = document.createElement('td');
+			bikecodeTd.textContent = bike.Bikecode;
+			tr.appendChild(bikecodeTd);
+			const isfixedTd = document.createElement('td');
+			isfixedTd.textContent = bike.isFixed;
+			tr.appendChild(isfixedTd);
+			if (bike.isFixed) {
+				tr.classList.add('is-fixed');
+			}
+			bikesList.appendChild(tr);
+		});
+	</script>
+</body>
+</html>
