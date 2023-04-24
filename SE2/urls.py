@@ -18,8 +18,8 @@ from django.urls import path, include
 from bike_app import views
 
 urlpatterns = [
-    # path('admin/', admin.site.urls),
     path('', include('bike_app.urls', namespace='bike_app')),  # If it is no path => Going bike_app/urls.py
+    # path('login/', include('bike_app.urls', namespace='bike_app')), 
     # If we want to add something, then better add urls in bike_app/urls.py
 ]
 
