@@ -22,3 +22,7 @@ class Reservation_Page(CreateView):
     fields = '__all__'
     success_url = reverse_lazy('home')
     template_name = 'bike_app/reservation.html'
+
+
+def bike_list(request):
+    return render(request, 'bike_list.html')
