@@ -19,9 +19,9 @@ from bike_app import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    # path('', views.Welcome_page),
-    path('', include('bike_app.urls', namespace='bike_app')), 
-    # path('', include('bike_app.urls')) ,# If it is no path => Going bike_app/urls.py
+    path('', views.Welcome_page),
+    path('login/', include('bike_app.urls', namespace='bike_app')), 
+    path('', include('bike_app.urls')) ,# If it is no path => Going bike_app/urls.py
     # If we want to add something, then better add urls in bike_app/urls.py
 ]
 
