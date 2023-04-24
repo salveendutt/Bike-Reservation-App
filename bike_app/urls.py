@@ -5,6 +5,8 @@ from .views import Reservation_Page
 app_name = 'bike_app'
 
 urlpatterns = [
-    path('', views.home, name='home'),
+    path('feedback/', views.FeedBack_page, name='feedback'),
+    path('', views.Welcome_page),
+
     path('reserve/', Reservation_Page.as_view(), name='reserve'),
 ]

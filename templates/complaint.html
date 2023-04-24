@@ -1,0 +1,37 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Compaint Add</title>
+    <link rel="stylesheet" href="{% static 'css/complaint.css' %}">
+    <style>
+</style>
+</head>
+
+<div>
+    <div class = "container">
+        <div class = "row">
+            <h1>FeedBack Page</h1>
+        </div>
+    </div>
+</div>
+<div class = "container">
+    <div class = "row">
+        <div class = "login-wrapper">
+            <div class = "box">
+                <h6>Modify Your FeedBack</h6>
+                <form class = "content-wrap" role="form" action="/add_complaint/" method="post" >
+                    <!-- <label>FeedBack ID:</label><input class = "form-control" name="complaint_id" type="text" value="{{Complaint.complaint_id}}" placeholder="Input the Bike ID"><br /> -->
+                    <label>FeedBack Description: </label><input class="form-control" name="Descriptions" id="describe" type="text" placeholder="Write the Details of your feedback" value="{{Complaint.Descriptions}}"><br />
+                <div class="action">
+                    <div class="button">
+                        <button type="submit" class="btn btn-primary">Save</button>
+                    </div>
+                </div>           
+            </form>
+            </div>
+        </div>
+    </div>
+</div>

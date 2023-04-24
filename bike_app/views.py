@@ -13,6 +13,10 @@ def Welcome_page(request):
     #find it on templates DIR of app DIR
     return render(request, "welcome.html")
 
+
+def FeedBack_page(request):
+    return render(request, "complaint.html")
+
 class Reservation_Page(CreateView):
     model = Reservation
     fields = '__all__'
