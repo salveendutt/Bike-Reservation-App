@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load static %}
+{% block contents  %}
+
+    <h1>Login</h1>
+    <div class="reg">
+      <form method="post" action="{% url 'bike_app:login' %}">
+        {% csrf_token %}
+
+        <!-- Login Form -->
+        <table class="reg_form">
+            <tr>
+                <td><label for="userid">User ID</label></td>      {# Lable is connecting to forms.py #}
+                <td><input type="text" name="userid"></td>        {# Input is connecting to forms.py #}
+                <td><label for="password">Password</label></td>   {# Lable is connecting to forms.py #}
+                <td><input type="password" name="password"></td>  {# Input is connecting to forms.py #}
+            </tr>
+        </table>
+
+        <input type="submit" class="btn" value="Login">
+     </form>
+    </div>
+   <p class="message">Don't you have an account?：
+   <a href="{% url 'bike_app:register' %}">Register</a>
+   </p>
+{% endblock %}

@@ -1,0 +1,258 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BikeRent</title>
+    <link rel="stylesheet" href="{% static 'css/welcome.css' %}">
+    <style>
+    .main {
+        background-image: url("/static/css/IMG/Internet_pic.jpg");
+        background-size: cover;
+        height: 100vh;
+    }
+</style>
+</head>
+<body id="body">
+    <div class="header" id="header">
+        <div class="header-img"  id="headerImg"><img src="/static/css/IMG/Logo.jpg" style="height: 100%; width: 40%; padding-left: 50%;"></img></div>
+        <div class="header-content">
+            <button class="headButton" id="home" style="font-size: medium;">Home</button>
+            <button class="headButton" id="login"style="font-size: medium;">Login</button>
+            <button class="headButton" id="reserve" style="font-size: medium;">Reserve</button>
+            <button class="headButton" id="FAQ" style="font-size: medium;">FAQ</button>
+            <button class="headButton" id="bike_list" style="font-size: medium;">Bike_list</button>
+            <!-- <p><a href="{% url 'bike_list' %}">Bike_list</a></p>
+            <a href="{% url 'login' %}">Login</a> -->
+        </div>
+        <div class="header-login"><img src="/static/css/IMG/login-icon.png " style="height: 45%; width: 15%; padding-right: 50%;padding-top:7%;padding-left: 10%;"></img></div>
+    </div>
+    <div class="box flexDemo2">
+        <div class="flex-box2">
+            <div style="padding-top:5px; padding-left: 38%; padding-right: 35%;">
+                <button class="headButton">Home</button>
+                <button class="headButton">Login</button>
+                <button class="headButton">Feedback</button>
+                <button class="headButton">Reserve</button>
+                <button class="headButton">FAQ</button>
+                <button class="headButton">Bike_list</button>
+            </div>
+        </div>
+    </div>
+    <div class="main">
+        <div>
+            <h1 class="h1_w">Bike Rental</h1>
+            <p class="p_w">Online Bike renting platform</p>
+        </div>
+        <div align="center">
+            <!-- <a href="/login/"> -->
+            <button id="btn" class="button_w">Start Your Traveling</button>
+            <!-- </a> -->
+        </div>
+        <div align="center" style="padding-top: 10px;">
+            <a href="/admin_login/">
+            <button class="admin">I am an admin</button>
+            </a>
+        </div>
+
+    </div>
+    <div class="box2">
+        <p class="instruction">Better Bike Better Life, 
+            Taking up cycling could be one of the best decisions you ever make, 
+            with the benefits covering improved health, happiness, relationships and much more. We prepared the best 
+            for you!
+         </p>
+    </div>
+    <div class="box flexDemo">
+        <div class="flex-box">
+
+            <div class="left-img">
+                <img src="/static/css/IMG/KRVB2Z29X18M003498-Level-Boost-2.0-M-niebieski-czarny-polysk-g.jpg" alt="Bike">
+            </div>
+            <div class="right-content">
+                <h1 style="flex: 0.5; padding-top: 30px;">KROSS LEVEL BOOST 2.0 2021</h1>
+                <div style="flex: 1;" class="right-text">
+                    e-MTB bike. It will give you a lot of fun in a variety of terrain. 
+                    Thanks to the capacious battery with a capacity of 500/630Wh, you can cover up to 145 km on a single charge.<br/><br/>
+                    Available sizes: M (height 170-183cm), L (180-194cm)
+                </div>
+                <div style="flex: 1;" class="right-btn-box">
+                    <button class="BikeButton">Reserve</button>
+                    
+                    <button class="BikeButton">More Info</button>
+                    
+                    <!-- <a href="/bike_list"></a> -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="box flexDemo" style="background-color: orange;">
+        <div class="flex-box">
+
+            <div class="right-content">
+                <h1 style="flex: 0.5; padding-top: 30px;">KROSS LEA BOOST 3.0 2021</h1>
+                <div style="flex: 1;" class="left-text">
+                    e-MTB bike. It will provide you with lots of fun in varied terrain. 
+                    Thanks to the capacious 500Wh battery, you can cover up to 115km on a single charge.<br/><br/>
+                    Available sizes: S (154-173cm)
+                </div>
+                <div style="flex: 1;" class="right-btn-box">
+                    <button class="BikeButton2">Reserve</button>
+                    <button class="BikeButton2">More Info</button>
+                </div>
+            </div>
+            <div class="left-img">
+                <img src="/static/css/IMG/lea_boost_3_0_630_turquoise_black_glossy-1.png" alt="Bike">
+            </div>
+        </div>
+    </div>
+
+    <div class="box flexDemo">
+        <div class="flex-box">
+
+            <div class="left-img">
+                <img src="/static/css/IMG/my21_fathom_e_jr-1024x582.jpg" alt="Bike">
+            </div>
+            <div class="right-content">
+                <h1 style="flex: 0.5; padding-top: 30px;">GIANT FATHOM E+ JUNIOR 2021</h1>
+                <div style="flex: 1;" class="right-text">
+                    All a young rider needs is to climb higher, ride longer and have more fun on the trail. This e-bike will put a smile on every child's face and make family adventures more fun than ever. The range of Fathom E+ is up to 140 km.
+                    <br/><br/>
+                    Size: For children 120-154cm tall
+                </div>
+                <div style="flex: 1;" class="right-btn-box">
+                    <button class="BikeButton">Reserve</button>
+                    <button class="BikeButton">More Info</button>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="box flexDemo" style="background-color: orange;">
+        <div class="flex-box">
+
+            <div class="right-content">
+                <h1 style="flex: 0.5; padding-top: 30px;">ROAD BIKE 3.0 2021</h1>
+                <div style="flex: 1;" class="left-text">
+                    Bule classic style road bike / racing bike, modified spare parts, big bicycle wheels, light brown. <br/><br/>
+                    Available sizes: S (154-173cm)
+                </div>
+                <div style="flex: 1;" class="right-btn-box">
+                    <button class="BikeButton2">Reserve</button>
+                    <button class="BikeButton2">More Info</button>
+                </div>
+            </div>
+            <div class="left-img">
+                <img src="/static/css/IMG/istockphoto-1344641306-612x612.jpg" alt="Bike">
+            </div>
+        </div>
+    </div>
+    <div class="box flexDemo">
+        <div class="flex-box">
+
+            <div class="left-img">
+                <img src="/static/css/IMG/istockphoto-1320658455-612x612.jpg" alt="Bike">
+            </div>
+            <div class="right-content">
+                <h1 style="flex: 0.5; padding-top: 30px;">ROAD BIKE BOOST 2.0 2020</h1>
+                <div style="flex: 1;" class="right-text">
+                    Colourful Road Bike and ajustable height of the Bike, suitable for young people. It could provide much fun for your daily life<br/><br/>
+                    Available sizes: M (height 170-183cm), L (180-194cm)
+                </div>
+                <div style="flex: 1;" class="right-btn-box">
+                    <button class="BikeButton">Reserve</button>
+                    <button class="BikeButton">More Info</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="box flexDemo" style="background-color: orange;">
+        <div class="flex-box">
+
+            <div class="right-content">
+                <h1 style="flex: 0.5; padding-top: 30px;">ROAD BIKE 3.0 2021</h1>
+                <div style="flex: 1;" class="left-text">
+                    White classic style road bike / racing bike, modified spare parts, beautiful color of the bike, which could make much pleasure for you. <br/><br/>
+                    Available sizes: M(height 154-173cm), L(height 175-183cm)
+                </div>
+                <div style="flex: 1;" class="right-btn-box">
+                    <button class="BikeButton2">Reserve</button>
+                    <button class="BikeButton2">More Info</button>
+                </div>
+            </div>
+            <div class="left-img">
+                <img src="/static/css/IMG/istockphoto-1454630142-612x612.jpg" alt="Bike">
+            </div>
+        </div>
+    </div>
+    
+    <footer class="box2 flexDemo">
+        <div class="flex-box">
+            <div class="left-logo"> 
+                <img src="/static/css/IMG/Logo.jpg" alt="Logo">
+            </div>
+            <div class = "right-content" style="padding-left: 12%; padding-top: 7%;">
+                <button class="FootButton">FAQ</button>
+                <button class="FootButton">About Us</button>
+                <button class="FootButton">FeedBack</button>
+                <button class="FootButton">Home Page</button>
+                <button class="FootButton">Bike list</button>
+            </div>
+            <div class="contact-logo"> 
+                <img src="/static/css/IMG/contact.png" alt="Logo">
+            </div>
+            <div class = "right-content" style="padding-right: 5%;padding-top: 5%;" >
+                <p style="font-size: x-large; color: gray; padding-top: 10%;">Feel free to contact us:</p>
+                <p style="font-size: xx-large; padding-top: 15%;">+48 123456789</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        let header = document.getElementById('header')
+        
+        // if (sessionStorage.getItem('loginType')) {
+        //     header.innerText = 'Already Login'
+        // }else {
+        //     header.innerText ='Login'
+        // }
+        let btn = document.getElementById("btn");
+        btn.addEventListener("click", function () {
+            if (!sessionStorage.getItem('loginType')) {
+                sessionStorage.setItem('loginType', 'Login')
+                // location.reload()
+            }
+            window.scrollBy({
+                // top: document.body.scrollHeight,
+                top: window.innerHeight,
+                behavior: 'smooth'
+            });
+        });
+        console.log(window.innerHeight);
+
+        window.addEventListener('scroll', (event) => {
+            console.log(document.documentElement.scrollTop);
+            if (document.documentElement.scrollTop >= 343) {
+                header.style.display = 'flex'
+            } else {
+                header.style.display = 'none'
+            }
+        });
+        let headerImg = document.getElementById('headerImg')
+        let headerContent = document.getElementById('headerContent')
+        let headerLogin = document.getElementById('headerLogin')
+        let home = document.getElementById('home')
+        let reserve = document.getElementById('reserve')
+        headerImg.addEventListener('click', function() {
+            location.reload()
+        })
+        home.addEventListener('click', function() {
+            location.reload()
+        })
+        // home.addEventListener('click', function() {
+        //     location.href()
+        // })
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Bikes List</title>
+</head>
+<body>
+	<h1>List of Bikes</h1>
+	<ul id="bikes-list"></ul>
+	
+	<script>
+		const bikes = [
+			{ brand: 'Giant', model: 'Defy Advanced', isFixed: true },
+			{ brand: 'Trek', model: 'Madone SLR', isFixed: false },
+			{ brand: 'Specialized', model: 'Tarmac SL7', isFixed: false },
+			{ brand: 'Cannondale', model: 'SuperSix Evo', isFixed: true },
+			{ brand: 'Pinarello', model: 'Dogma F12', isFixed: false },
+			{ brand: 'BMC', model: 'Teammachine SLR', isFixed: true },
+			{ brand: 'Scott', model: 'Addict RC', isFixed: false }
+		];
+		
+		const bikesList = document.getElementById('bikes-list');
+		
+		bikes
+			.filter(bike => !bike.isFixed)
+			.forEach(bike => {
+				const li = document.createElement('li');
+				li.textContent = `${bike.brand} ${bike.model}`;
+				bikesList.appendChild(li);
+			});
+	</script>
+</body>
+</html>

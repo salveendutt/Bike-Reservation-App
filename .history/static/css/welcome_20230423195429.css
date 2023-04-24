@@ -1,0 +1,54 @@
+.h1_w {
+    font-size: 80px;
+    color: lemonchiffon;
+    text-align:center;
+    animation: fade-in 4s;
+    animation-fill-mode:forwards;
+}
+
+@keyframes fade-in{
+0%{ opacity: 0;}
+100%{opacity:1;}
+}
+.p_w{
+    font-size:40px;
+    margin-top: 70px;
+    font-style: italic ;
+    text-align: center;
+    color: antiquewhite;
+    opacity: 0;
+    animation: fade-in 3s ease 1s 1;
+    animation-fill-mode:forwards;
+}
+.button_w{
+    font-size:40px;
+    background-color: chocolate;
+    margin-top: 65px;
+    font-style: italic ;
+    text-align: center;
+    display: inline-block;
+    border-radius: 10px;
+    opacity: 0;
+    animation: fade-in 2s ease 2s 1;
+    animation-fill-mode:forwards;
+    box-shadow: 0 0 5px #FAAD39;
+    -webkit-tap-highlight-color: transparent;
+    cursor: pointer;
+}
+.button_w:hover{
+    background-color: #ffb515;
+}
+.admin{
+    background-color: #FAAD39;
+    text-align: center;
+    display: inline-block;
+    border-radius: 10px;
+    opacity: 0;
+    animation: fade-in 2s ease 2s 1;
+    animation-fill-mode:forwards;
+    box-shadow: 0 0 5px #FAAD39;
+    -webkit-tap-highlight-color: transparent;
+}
+.admin:hover{
+    background-color: #ffb515;
+}
