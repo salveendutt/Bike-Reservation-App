@@ -9,3 +9,6 @@ def home(request):
 def Welcome_page(request):
     #find it on templates DIR of app DIR
     return render(request, "welcome.html")
+
+def FeedBack_page(request):
+    return render(request, "complaint.html")

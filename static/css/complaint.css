@@ -28,7 +28,7 @@
     -ms-box-shadow: rgba(0, 0, 0, 0.4) 0 1px 3px, rgba(0, 0, 0, 0.35) 0 0 1px;
     -o-box-shadow: rgba(0, 0, 0, 0.4) 0 1px 3px, rgba(0, 0, 0, 0.35) 0 0 1px;
     box-shadow: rgba(0, 0, 0, 0.4) 0 1px 3px, rgba(0, 0, 0, 0.35) 0 0 1px;
-    background: antiquewhite;
+    background: orange;
     -webkit-border-radius: 6px;
     -moz-border-radius: 6px;
     -ms-border-radius: 6px;
@@ -40,7 +40,7 @@
     margin-bottom: 35px;
     font-size: 20px;
     font-weight: 600;
-   color: chocolate;
+   color:white;
 }
 .login-wrapper .box .content-wrap {
     width: 82%;
