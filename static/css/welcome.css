@@ -1,0 +1,272 @@
+/***************************
+    default welcome page
+***************************/
+.main {
+    background-image: url("/static/image/Internet_pic.jpg");
+    background-size: cover;
+    height: 100vh;
+    position: relative;
+    text-align: center;
+}
+.center{
+    position: absolute;
+    top: 35%;
+    left: 40%;
+}
+#btn{
+
+}
+
+/***************************
+    (user) welcome page
+***************************/
+.h1_w {
+    font-size: 80px;
+    color: white;
+    text-align:center;
+    animation: fade-in 4s;
+    animation-fill-mode:forwards;
+    padding-top:100px
+}
+* {
+    margin: 0;
+    padding: 0;
+  }
+@keyframes fade-in{
+0%{ opacity: 0;}
+100%{opacity:1;}
+}
+.p_w{
+    font-size:40px;
+    margin-top: 70px;
+    font-style: italic ;
+    text-align: center;
+    color: white;
+    opacity: 0;
+    animation: fade-in 3s ease 1s 1;
+    animation-fill-mode:forwards;
+}
+.button_w{
+    font-size:40px;
+    background-color: chocolate;
+    margin-top: 65px;
+    font-style: italic ;
+    text-align: center;
+    display: inline-block;
+    border-radius: 10px;
+    opacity: 0;
+    animation: fade-in 2s ease 2s 1;
+    animation-fill-mode:forwards;
+    box-shadow: 0 0 5px #FAAD39;
+    -webkit-tap-highlight-color: transparent;
+    cursor: pointer;
+}
+.button_w:hover{
+    background-color: #ffb515;
+}
+.admin{
+    background-color: transparent;
+    text-align: center;
+    color: white;
+    display: inline-block;
+    width: 150px;
+    border-radius: 10px;
+    font-size: medium;
+    opacity: 0;
+    animation: fade-in 2s ease 2s 1;
+    animation-fill-mode:forwards;
+    /* box-shadow: 0 0 1px #FAAD39; */
+    border: transparent;
+    -webkit-tap-highlight-color: transparent;
+    cursor: pointer;
+}
+.admin:hover{
+    /* background-color: #ffb515; */
+    color: #FAAD39;
+}
+
+.box {
+    width: 100%;
+    height: 100vh;
+  }
+
+.box2{
+  width: 100%;
+  height: 10vh;
+  background-color: white;
+}
+  .green {
+    background-color: green;
+  }
+
+  .blue {
+    background-color: rosybrown;
+  }
+
+  .orange {
+    background-color: orange;
+  }
+
+  .yellow {
+    background-color: yellow;
+  }
+
+  .header{
+    position: fixed;
+    height: 100px;
+    width: 100%;
+    background-color:white;
+    z-index: 2;
+    transition: all .3s ease!important;
+    display: none;
+  }
+
+  .flexDemo{
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .flex-box{
+    width: 1200px;
+    height: 70%;
+    display: flex;
+  }
+  .left-img{
+    flex: 1;
+  }
+  .left-img, img {
+    width: 100%;
+  }
+  .right-content{
+    flex: 1;
+    width: 50%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .right-text{
+   word-break: break-all;
+   font-size:20px;
+   color: #FAAD39;
+   padding-top:10px;
+  }
+
+  .left-text{
+    word-break: break-all;
+    font-size:20px;
+    color: white;
+    padding-top:10px;
+    padding-right: 10px;
+   }
+
+  .right-btn-box{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-bottom:70px
+  }
+
+  .BikeButton{
+    height: 50px;
+    width: 100px;
+    display: inline-block;
+    background-color:#FAAD39;
+    border-radius: 50px;
+    cursor: pointer;
+  }
+  .BikeButton:hover{
+    background-color: white;
+    color: #FAAD39;
+  }
+  .BikeButton2{
+    height: 50px;
+    width: 100px;
+    display: inline-block;
+    background-color:white;
+    border-radius: 50px;
+    cursor: pointer;
+  }
+  .BikeButton2:hover{
+    background-color: #FAAD39;
+    color: white;
+  }
+
+  .flexDemo2{
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+  }
+  .flex-box2{
+    width: 1200px;
+    height: 80%;
+    display: flex;
+  }
+  .headButton{
+    background-color: transparent;
+    border: transparent;
+    padding-left: 10px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  .headButton:hover{
+    color: #ffb515;
+}
+
+.instruction{
+  align-items: center;
+  font-style: italic;
+  font-size: large;
+  font-weight: bold;
+  padding-top:5%;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+.left-logo{
+  flex:1;
+  padding-left: 11%;
+}
+.contact-logo{
+  flex:0.15;
+  padding-left: 5%;
+  padding-top: 7.25%;
+}
+.FootButton{
+  height: 50px;
+  width: 100px;
+  border-radius: 50px;
+  cursor: pointer;
+  background-color: transparent;
+  border: transparent;
+  padding-top: 10%;
+  font-size: medium;
+}
+.FootButton:hover{
+  color: #FAAD39;
+}
+.footer-right-content{
+  flex: 0.5;
+  width: 50%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.header-img{
+  width: 25%;
+  height: 100%;
+}
+.header-content{
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content:space-evenly;
+  align-items: center;
+}
+.header-login{
+  width: 25%;
+  height: 100%;
+}

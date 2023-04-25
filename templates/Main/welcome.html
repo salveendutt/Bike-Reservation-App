@@ -1,0 +1,19 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BikeRent</title>
+    <!-- CSS LINK -->
+    <link rel="stylesheet" href="{% static 'css/welcome.css' %}">
+</head>
+<body id="body">
+    <div class="main">
+        <h1 class="h1_w">Bike Rental</h1>
+        <p class="p_w">Online Bike renting platform</p>
+        <div class="center">
+            <button id="btn" class="button_w"><a href="{% url 'bike_app:login' %}">Start Your Traveling</a></button>
+        </div>
+    </div>
+</body>
+</html>

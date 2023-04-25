@@ -1,0 +1,36 @@
+from django import forms
+from django.contrib.auth.models import User
+from .models import UserAccount
+from .models import Complaint
+
+# Form class
+class AccountForm(forms.ModelForm):
+    # form for password (not visible)
+    password = forms.CharField(widget=forms.PasswordInput(), label="password")
+
+    class Meta():
+        # Uer
+        model = User
+        # Fields
+        fields = ('username', 'email', 'password')
+        # Name for fields
+        labels = {'username': "username", 'email': "email"}
+
+
+class AddAccountForm(forms.ModelForm):
+    class Meta():
+        # Model class
+        model = UserAccount
+        fields = ('name', 'surname',)
+        labels = {'name': "name", 'surname': "surname", }
+
+
+class ComplaintForm(forms.ModelForm):
+      class Meta():
+          # Complain Form
+          model = Complaint
+          fields = ('Descriptions', )
+          widgets = {
+              'Descriptions': forms.Textarea(attrs={'cols': 80, 'rows': 10}),
+          }
+
