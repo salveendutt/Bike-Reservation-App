@@ -1,7 +1,7 @@
 # Bike-Reservation-App
 
 ### Admin Page
-user: "user"
+user: "user" <br>
 password: "user_password"
 
 ### How to run the test function?
