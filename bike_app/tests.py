@@ -52,5 +52,33 @@ class ComplaintTest(TestCase):
 """
 Test Bikes
 """
+class BikeInfoTest(TestCase):
+    def setUp(self):
+        self.bike = BikeInfo.objects.create(
+            BikeCode='001', BikeName='Mountain Bike', BikeType='Mountain',
+            Descriptions='Sturdy bike', isBroken=False)
 
+    def test_bikeCode(self):
+        check_code = str(self.bike.BikeCode)
+        ans_code = "001"
+        self.assertEqual(check_code, ans_code)
 
+    def test_bikeName(self):
+        check_name = str(self.bike.BikeName)
+        ans_name = 'Mountain Bike'
+        self.assertEqual(check_name, ans_name)
+
+    def test_bikeType(self):
+        check_type = str(self.bike.BikeType)
+        ans_type = 'Mountain'
+        self.assertEqual(check_type, ans_type)
+
+    def test_description_str(self):
+        check_text = str(self.bike.Descriptions)
+        ans_text = 'Sturdy bike'
+        self.assertEqual(check_text, ans_text)
+
+    def test_isBroken(self):
+        check_isBroken = self.bike.isBroken
+        ans_isBroken = False
+        self.assertEqual(check_isBroken, ans_isBroken)

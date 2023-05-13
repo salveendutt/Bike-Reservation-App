@@ -28,22 +28,13 @@ class UserAccount(models.Model):
         return url_uuid
 
 
-# class CustomUser(AbstractBaseUser):
-#     name = models.CharField(max_length=30)        # name
-#     surname = models.CharField(max_length=30)     # surname
-#     email = models.EmailField(unique=True)        # email address
-#     password = models.CharField(max_length=128)   # password
-#
-#     USERNAME_FIELD = 'email'
-
-
 class BikeInfo(models.Model):
 
     BikeCode = models.CharField(primary_key=True, max_length=20)    # Bike Id
     BikeName = models.CharField(max_length=20)                      # Bike name
     BikeType = models.CharField(max_length=20)                      # Bike Type
     Descriptions = models.CharField(max_length=300)                 # Bike Description
-    isFix=models.BooleanField(default=False)                          # Bike fix or not
+    isBroken = models.BooleanField(default=False)                   # Bike is broken or not
 
 
 class Complaint(models.Model):

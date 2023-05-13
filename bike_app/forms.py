@@ -33,4 +33,3 @@ class ComplaintForm(forms.ModelForm):
           widgets = {
               'Descriptions': forms.Textarea(attrs={'cols': 80, 'rows': 10}),
           }
-
