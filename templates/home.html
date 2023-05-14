@@ -2,6 +2,25 @@
 {% load static %}
 {% block contents  %}
 
-<h1>Hello! SE2 First Attempt :)</h1>
+<body>
+<h1>Success! Thank you for your feedback :)</h1>
+<p><span id="time">5</span>seconds later jump to home page......</p>
+<script>
+    //定义一个方法，获取span标签，修改span的内容
+    var second = 5;
+    var time = document.getElementById("time");
 
+    //读秒效果实现
+    function showTime() {
+        second --;
+        time.innerHTML = second+"";
+        if (second<=0){
+            location.href = "http://127.0.0.1:8000/";
+        }
+    }
+
+    //定义一个计时器，执行该方法
+    setInterval(showTime,1000);
+</script>
+</body>
 {% endblock %}
