@@ -18,6 +18,7 @@ class BikeInfo(models.Model):
     BikeName = models.CharField(max_length=20)                      #Bike name
     BikeType = models.CharField(max_length=20)                      #Bike Type
     Descriptions = models.CharField(max_length=300)                 #Bike Description
+    BikePicture = models.CharField(max_length=20)                   #Bike Picture path
 
 
 class AdminInfo(models.Model):
@@ -28,7 +29,7 @@ class AdminInfo(models.Model):
 
 
 class Complaint(models.Model):
-    complaint_id = models.CharField(primary_key=True, max_length=20)   #Complaint Id
+    complaint_id = models.CharField(primary_key=True,max_length=20,unique=True)   #Complaint Id
     Descriptions = models.CharField(max_length=300)                    #Description
 
 

@@ -1,5 +1,12 @@
-from django.shortcuts import render
-from django.http import HttpResponse
+from audioop import reverse
+from django.shortcuts import render, redirect
+from django.http import HttpResponse, HttpResponseRedirect
+from bike_app.models import Complaint, BikeInfo
+from django.contrib import messages
+import tkinter.messagebox
+from tkinter import *
+
+
 
 # Create your views here.
 
@@ -12,3 +19,15 @@ def Welcome_page(request):
 
 def FeedBack_page(request):
     return render(request, "complaint.html")
+
+def add_complaint(request):
+    if request.method == 'POST':
+        new_Complaint_id = request.POST.get("complaint_id")
+        new_Complaint_Descriptions = request.POST.get('Descriptions')#complaint_id=new_Complaint_id
+        Complaint.objects.create(complaint_id=new_Complaint_id,Descriptions=new_Complaint_Descriptions) 
+        return redirect('../')  
+    return render(request, "complaint.html")
+
+def bikeList_page(request):
+    bike = BikeInfo.objects.all()
+    return render(request, "bikeList.html", {"bike_list": bike})

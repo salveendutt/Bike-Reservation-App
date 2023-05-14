@@ -7,4 +7,6 @@ urlpatterns = [
     # path('', views.home, name='home'),
     path('feedback/', views.FeedBack_page, name='feedback'),
     path('', views.Welcome_page),
+    path('add_complaint/',views.add_complaint),
+    path('bikeList/',views.bikeList_page),
 ]
