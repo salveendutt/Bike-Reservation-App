@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Personal Information</title>
+    <style>
+        body {
+            background-color: rgb(235, 220, 205);
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+			padding: 8px;
+			text-align: left;
+			border: 1px solid black;
+		}
+		th {
+			background-color: #dddddd;
+		}
+		.is-fixed {
+			background-color: #ff9999;
+		}        
+    </style>
+</head>
+<body>
+	<h1>My Info</h1>
+    <table>
+		<thead>
+			<tr>
+				<th>Bikecode</th>
+				<th>StartDate</th>
+                <th>EndDate</th>
+                <th>CostPerDay($)</th>
+			</tr>
+		</thead>
+		<tbody id="bikes-list"></tbody>
+	</table>
+	<button id="home-button">Home</button>
+    <button id="logout-button">Manage</button>
+	<script>
+		const bikes = [
+			{ Bikecode: 1, startDate: '2022-01-01', endDate: '2022-01-05', costPerDay: 10 },
+            { Bikecode: 2, startDate: '2023-01-01', endDate: '2022-01-05', costPerDay: 10 },
+            { Bikecode: 3, startDate: '2023-03-01', endDate: '2022-03-05', costPerDay: 10 }
+
+		];
+		
+		const bikesList = document.getElementById('bikes-list');
+		
+		bikes.forEach(bike => {
+			const tr = document.createElement('tr');
+			const bikecodeTd = document.createElement('td');
+			bikecodeTd.textContent = bike.Bikecode;
+			tr.appendChild(bikecodeTd);
+
+            const startDateTd = document.createElement('td');
+            startDateTd.textContent = bike.startDate;
+            tr.appendChild(startDateTd);
+
+            const endDateTd = document.createElement('td');
+            endDateTd.textContent = bike.endDate;
+            tr.appendChild(endDateTd);
+
+            const costPerDayTd = document.createElement('td');
+            costPerDayTd.textContent = bike.costPerDay;
+            tr.appendChild(costPerDayTd);
+
+            bikesList.appendChild(tr);
+
+            });
+
+
+        const homeButton = document.getElementById('home-button');
+		homeButton.addEventListener('click', () => {
+			window.location.href = '/';
+		});
+	</script>
+</body>
+</html>

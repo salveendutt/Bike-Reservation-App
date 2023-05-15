@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Personal Information</title>
+    <style>
+        body {
+            background-color: rgb(235, 220, 205);
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+			padding: 8px;
+			text-align: left;
+			border: 1px solid black;
+		}
+		th {
+			background-color: #dddddd;
+		}
+		.is-fixed {
+			background-color: #ff9999;
+		}        
+    </style>
+</head>
+<body>
+	<h1>My Info</h1>
+    <table>
+		<thead>
+			<tr>
+				<th>Bikecode</th>
+				<th>StartDate</th>
+                <th>EndDate</th>
+                <th>CostPerDay($)</th>
+			</tr>
+		</thead>
+		<tbody id="bikes-list"></tbody>
+	</table>
+	<button id="home-button">Home</button>
+    <button id="logout-button">Logout</button>
+	<script>
+		const bikes = [
+			{ Bikecode: 1, srartDate: '2022-01-01', endDate: '2022-01-05', costPerDay: 10 },
+            { Bikecode: 2, srartDate: '2022-01-01', endDate: '2022-01-05', costPerDay: 10 },
+            { Bikecode: 3, srartDate: '2022-01-01', endDate: '2022-01-05', costPerDay: 10 }
+
+		];
+		
+		const bikesList = document.getElementById('bikes-list');
+		
+		bikes.forEach(bike => {
+			const tr = document.createElement('tr');
+			const bikecodeTd = document.createElement('td');
+			bikecodeTd.textContent = bike.Bikecode;
+			tr.appendChild(bikecodeTd);
+			const isfixedTd = document.createElement('td');
+			const isfixedCheckbox = document.createElement('input');
+			// isfixedCheckbox.type = 'checkbox';            
+			// isfixedTd.textContent = bike.isFixed;
+            // isfixedCheckbox.addEventListener('change', () => {
+            //     bike.isFixed = isfixedCheckbox.checked;
+            //     if(bike.isFixed) {
+            //         tr.classList.add('is-fixed');
+            //     }else {
+            //         tr.classList.remove('is-fixed');
+            //     }
+            });
+        //     isfixedTd.appendChild(isfixedCheckbox);
+		// 	tr.appendChild(isfixedTd);
+		// 	if (bike.isFixed) {
+		// 		tr.classList.add('is-fixed');
+		// 	}
+		// 	bikesList.appendChild(tr);
+		// });
+
+        // const homeButton = document.getElementById('home-button');
+		// homeButton.addEventListener('click', () => {
+		// 	window.location.href = '/';
+		// });
+	</script>
+</body>
+</html>
