@@ -1,0 +1,79 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>bikeList</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="stylesheet" href="{% static 'css/bikeList.css' %}">
+
+</head>
+
+<body class="login-bg">
+	<div class="header">
+		<div class="container">
+			<div class="row">
+				<div class="logo">
+					<h1>BIKES LIST</h1>
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+
+	<div class="container">
+		<div class="row">
+			<div class="logout">
+				<a href="/login/">
+					<button class="btn">Log out</button>
+				</a>
+			</div>
+			<div class="login-wrapper box content content-box dfc">
+
+				<table class="item-text" id="UserPage" cellpadding="0" cellspacing="0" border="0">
+					<thead class="h40">
+						<tr>
+                            <th>BikeCode</th>
+                            <th>INFO</th>
+							<th>BikeName</th>
+							<th>BikeType</th>
+							<th>Descriptions</th>
+                            <th></th>
+						</tr>
+					</thead>
+					<tbody>
+						{% for bike in bike_list %}
+						<tr class="h40">
+                            <td>{{ bike.BikeCode }}</td>
+                            <td style="height: 120px; width: 155px;"><img src={{bike.BikePicture}} style="height: 120px; width: 155px;"/></td>
+							
+							<td>{{ bike.BikeName }}</td>
+							<td>{{ bike.BikeType }}</td>
+							<td><div style="width: 500px;">{{ bike.Descriptions }}</div></td>
+							<td>
+                                <div style="padding-right: 10px;">
+                                    <button class="option-btn">
+                                        <a href="/reserve/">
+                                            reserve
+                                        </a>
+                                    </button>
+                                </div>
+								<!-- <button class="option-btn">
+									<a href="/drop_book/?id={{ book.book_id }}">
+										delete
+									</a>
+								</button> -->
+							</td>
+						</tr>
+						{% endfor %}
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

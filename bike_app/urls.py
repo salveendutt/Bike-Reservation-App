@@ -9,4 +9,8 @@ urlpatterns = [
     path('', views.Welcome_page),
     path('bike_list/', views.bike_list, name='bike_list'),
     path('reserve/', Reservation_Page.as_view(), name='reserve'),
+
+    path('add_complaint/',views.add_complaint),
+    path('bikeList/',views.bikeList_page),
+
 ]
