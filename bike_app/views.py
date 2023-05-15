@@ -47,3 +47,5 @@ def bikeList_page(request):
     bike = BikeInfo.objects.all()
     return render(request, "bikeList.html", {"bike_list": bike})
 
+#def bike_list(request):
+#    return render(request, 'bike_list.html')

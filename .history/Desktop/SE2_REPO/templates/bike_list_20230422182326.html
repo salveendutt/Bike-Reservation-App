@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Bikes List</title>
+</head>
+<body>
+	<h1>List of Bikes</h1>
+    <table>
+		<thead>
+			<tr>
+				<th>BikesCode</th>
+				<th>isFixed</th>
+			</tr>
+		</thead>
+		<tbody id="bikes-list"></tbody>
+	</table>
+	<ul id="bikes-list"></ul>
+	
+	<script>
+		const bikes = [
+            {Bikecode:1,isFixed:false},
+            {Bikecode:2,isFixed:false},
+		];
+		
+		const bikesList = document.getElementById('bikes-list');
+		
+		bikes
+			.filter(bike => !bike.isFixed)
+			.forEach(bike => {
+				const li = document.createElement('li');
+				li.textContent = `${bike.Bikecode}     ${bike.isFixed}`;
+				bikesList.appendChild(li);
+			});
+	</script>
+</body>
+</html>

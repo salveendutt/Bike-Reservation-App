@@ -19,6 +19,7 @@ class BikeInfo(models.Model):
     BikeType = models.CharField(max_length=20)                      #Bike Type
     Descriptions = models.CharField(max_length=300)                 #Bike Description
     BikePicture = models.CharField(max_length=20)                   #Bike Picture path
+    isFix=models.BooleanField(default=False)                          # Bike fix or not
 
 
 class AdminInfo(models.Model):
