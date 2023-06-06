@@ -47,5 +47,35 @@ def bikeList_page(request):
     bike = BikeInfo.objects.all()
     return render(request, "bikeList.html", {"bike_list": bike})
 
-#def bike_list(request):
+# def bike_list(request):
 #    return render(request, 'bike_list.html')
+
+def bike_info1(request):
+   bike = BikeInfo.objects.all().filter(BikeName="KROSS LEVEL BOOST 2.0 2021")
+   return render(request, 'bikeInfo.html',{"bike_info": bike})
+
+def bike_info2(request):
+   bike = BikeInfo.objects.all().filter(BikeName="KROSS LEA BOOST 3.0 2021")
+   return render(request, 'bikeInfo.html',{"bike_info": bike})
+
+def bike_info3(request):
+   bike = BikeInfo.objects.all().filter(BikeName="GIANT FATHOM E+ JUNIOR 2021")
+   return render(request, 'bikeInfo.html',{"bike_info": bike})
+
+def bike_info4(request):
+   bike = BikeInfo.objects.all().filter(BikeName="ROAD BIKE 3.0 2021")
+   return render(request, 'bikeInfo.html',{"bike_info": bike})
+
+def bike_info5(request):
+   bike = BikeInfo.objects.all().filter(BikeName="ROAD BIKE BOOST 2.0 2020")
+   return render(request, 'bikeInfo.html',{"bike_info": bike})
+
+def bike_info6(request):
+   bike = BikeInfo.objects.all().filter(BikeName="ROAD BIKE 3.1 2021")
+   return render(request, 'bikeInfo.html',{"bike_info": bike})
+
+def recharge(request):
+    return render(request,'recharge.html')
+
+def FAQ(request):
+    return  render(request,'FAQ.html')
