@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .main {
+            width: 70%;
+            border-right: 2px solid black;
+            padding: 20px;
+        }
+
+        .head1 {
+            font-size: 24px;
+            margin: 0;
+            padding: 10px 0;
+        }
+
+        .p_w {
+            margin: 0;
+        }
+
+        .table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        .table td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .table td button {
+            border: none;
+            background: none;
+            cursor: pointer;
+            font-size: 16px;
+            color: blue;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .modal-content {
+            background-color: white;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #888;
+            max-width: 600px;
+            text-align: center;
+            position: relative;
+        }
+
+        .close {
+            color: #aaaaaa;
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 70%;
+            max-width: 500px;
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .back-button {
+            position: absolute;
+            top: 40px;
+            right: 40px;
+        }
+
+        .back-button a {
+            text-decoration: none;
+            color: #333;
+            font-size: 14px;
+            padding: 5px 10px;
+            background-color: #eee;
+            border-radius: 3px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="back-button">
+        <a href="/">Back to Home</a>
+    </div>
+    <div class="container">
+        <div class="main">
+            <h1 class="head1">FAQs</h1>
+            <p class="p_w">There are some frequently asked questions below, which could help you solve some problems. If
+                you have any problems not included below, please contact us directly. We're looking forward to your
+                message! :)</p>
+            <table class="table">
+                <tr>
+                    <td>
+                        <button onclick="showModal('mengCeng')">How to register an account?</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button onclick="showModal('mengCeng1')">How to Login?</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button onclick="showModal('mengCeng2')">How to recharge?</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button onclick="showModal('mengCeng3')">Could I rent a bike without using funds in my
+                            account?</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div id="mengCeng" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="hideModal('mengCeng')">&times;</span>
+            <h1>How to register an account?</h1>
+            <p>There are three steps to register your account:</p>
+            <ol>
+                <li>Click 'Register' from the welcome page</li>
+                <li>Enter your Email and password</li>
+                <li>If it shows success, you've already created an account!</li>
+            </ol>
+            <p>Back to the FAQ page, please refresh :)</p>
+        </div>
+    </div>
+
+    <div id="mengCeng1" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="hideModal('mengCeng1')">&times;</span>
+            <h1>How to Login?</h1>
+            <p>There are three steps to login to your account:</p>
+            <ol>
+                <li>Click 'Login' from the welcome page</li>
+                <li>Enter your Email and password</li>
+                <li>If it fails, please check your email address and password!</li>
+            </ol>
+            <p>Back to the FAQ page, please refresh :)</p>
+        </div>
+    </div>
+
+    <div id="mengCeng2" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="hideModal('mengCeng2')">&times;</span>
+            <h1>How to recharge?</h1>
+            <p>There are five steps to recharge:</p>
+            <ol>
+                <li>Firstly, you should login to your account.</li>
+                <li>Click 'Recharge' button.</li>
+                <li>Choose the amount you want to recharge.</li>
+                <li>Choose the payment method you prefer.</li>
+                <li>Verify your payment operation.</li>
+            </ol>
+            <p>If you want to recharge now, click <a href="/recharge/">here</a></p>
+            <p>Back to the FAQ page, please refresh :)</p>
+        </div>
+    </div>
+
+    <div id="mengCeng3" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="hideModal('mengCeng3')">&times;</span>
+            <h1>Could I rent a bike without using funds in my account?</h1>
+            <p>Actually, you cannot directly pay for a rental without recharging. Maybe we will improve it in the
+                future. For now, you can only use the funds in your wallet.</p>
+            <p>Firstly, you should login to your account.</p>
+            <ol>
+                <li>Click 'Recharge' button.</li>
+                <li>Choose the amount you want to recharge.</li>
+                <li>Choose the payment method you prefer.</li>
+                <li>Verify your payment operation.</li>
+            </ol>
+            <p>If you want to recharge now, click <a href="/recharge/">here</a></p>
+            <p>If you still have any confusion, please contact us.</p>
+            <p>Back to the FAQ page, please refresh :)</p>
+        </div>
+    </div>
+
+    <script>
+        function showModal(id) {
+            var modal = document.getElementById(id);
+            modal.style.display = "block";
+        }
+
+        function hideModal(id) {
+            var modal = document.getElementById(id);
+            modal.style.display = "none";
+        }
+    </script>
+
+</body>
+
+</html>

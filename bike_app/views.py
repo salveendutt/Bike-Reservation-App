@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponseRedirect, HttpResponse, HttpResponseNotFound
 from django.views.generic.edit import CreateView
 from django.urls import reverse_lazy
+from .models import Reservation
 from django.shortcuts import redirect            # Rediret
 
 # For Login and Logout
@@ -15,6 +16,7 @@ from django.contrib.auth.decorators import login_required
 
 # Complain
 from .models import Complaint
+from .models import BikeInfo
 from .forms import ComplaintForm
 
 # User Register
@@ -97,6 +99,7 @@ def Login(request):
     else:
         return render(request, 'UserAuthentication/login.html')
 
+
 # Log out
 @login_required
 def Logout(request):
@@ -105,9 +108,15 @@ def Logout(request):
     return redirect('bike_app:login')
 
 
-# Home page before user log in
+# Home Page before log in
 def welcome(request):
-    return render(request, "Main/welcome.html")
+
+    if request.user.is_authenticated:
+        # If user has logged in => Redirect to user page
+        return redirect(reverse('bike_app:welcome_user', args=[request.user.useraccount.random_url]))
+    else:
+        # If user has not logged in => Redirect to login page
+        return render(request, 'Main/welcome_user.html', {'login_url': '/login/'})
 
 
 # Home Page after log in
@@ -154,12 +163,27 @@ def FeedBack_page(request, url_uuid):
     return render(request, 'Feedback/complaint.html', context=params)
 
 
-# class Reservation_Page(CreateView):
-#     model = Reservation
-#     fields = '__all__'
-#     success_url = reverse_lazy('home')
-#     template_name = 'bike_app/reservation.html'
+def bikeList_page(request, url_uuid):
+    # Check user login and he has unique url
+    try:
+        user_account = UserAccount.objects.get(random_url=url_uuid)
+    except UserAccount.DoesNotExist:
+        # URL is not valid
+        return HttpResponseNotFound("Page not found")
+
+    bike = BikeInfo.objects.all()
+
+    params = {"userid": request.user, "bike_list": bike, }
+
+    return render(request, "Main/bikeList.html", params)
 
 
-def bike_list(request, url_uuid):
-    return render(request, 'Main/bike_list.html')
+class Reservation_Page(CreateView):
+    model = Reservation
+    fields = '__all__'
+    success_url = reverse_lazy('home')
+    template_name = 'bike_app/reservation.html'
+
+
+def FAQ(request):
+    return render(request, "Main/FAQ.html",)

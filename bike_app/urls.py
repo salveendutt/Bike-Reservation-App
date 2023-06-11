@@ -1,12 +1,12 @@
 from django.urls import path
 from . import views
-# from .views import Reservation_Page
+from .views import Reservation_Page
 
 app_name = 'bike_app'
 
 urlpatterns = [
     # Welcome page before user log in
-    path('', views.welcome, name='welcome'),
+    path('', views.welcome),
 
     # Welcome page after user login
     path('welcome/<uuid:url_uuid>', views.welcome_user, name='welcome_user'),  # unique URL
@@ -24,8 +24,14 @@ urlpatterns = [
     path('feedback/<uuid:url_uuid>', views.FeedBack_page, name='feedback'),  # unique URL
 
     # Bike List page
-    path('bike_list/<uuid:url_uuid>', views.bike_list, name='bike_list'),    # unique URL
+    # path('bike_list/<uuid:url_uuid>', views.bike_list, name='bike_list'),    # unique URL
 
-    # Reserve? page
-    # path('reserve/', Reservation_Page.as_view(), name='reserve'),
+    # Reservation page
+    path('reserve/', Reservation_Page.as_view(), name='reserve'),
+
+    # Bike List Page
+    path('bikeList/<uuid:url_uuid>', views.bikeList_page, name='bikeList'),
+
+    # Q&A
+    path('FAQ/', views.FAQ, name='FAQ'),
 ]
