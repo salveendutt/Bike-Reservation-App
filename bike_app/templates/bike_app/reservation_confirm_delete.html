@@ -1,0 +1,6 @@
+<a href="{% url 'tasks' %"></a>
+<form methos="POST">
+    {% csrf_token %}
+    <p>Are you sure you want to delete this reservation? "{{reservation}}"</p>
+    <input type="'submit" value="Delete" />
+</form>
