@@ -7,7 +7,21 @@
     <title>Compaint Add</title>
     <link rel="stylesheet" href="{% static 'css/complaint.css' %}">
     <style>
-</style>
+        .back-button {
+            position: absolute;
+            top: 40px;
+            right: 40px;
+        }
+
+        .back-button a {
+            text-decoration: none;
+            color: #333;
+            font-size: 14px;
+            padding: 5px 10px;
+            background-color: #eee;
+            border-radius: 3px;
+        }
+    </style>
 </head>
 <div>
     <div class = "container">
@@ -15,23 +29,31 @@
             <h1>FeedBack Page</h1>
         </div>
     </div>
+    <div class="back-button">
+        <a href="/">Back to Home</a>
+    </div>
 </div>
 <div class = "container">
     <div class = "row">
         <div class = "login-wrapper">
             <div class = "box">
-                <h6>Modify Your FeedBack</h6>
-                <form class = "content-wrap" role="form" action="{% url 'bike_app:feedback' userid.useraccount.random_url %}" method="POST" >
-                    <!-- <label>FeedBack ID:</label><input class = "form-control" name="complaint_id" type="text" value="{{Complaint.complaint_id}}" placeholder="Input the Bike ID"><br /> -->
-                    <label>FeedBack Description: </label>
-                      {% csrf_token %}
-                      {{ form.as_p }}  <!-- Form for description -->
-                <div class="action">
-                    <div class="button">
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                <h6>Give us FeedBack :)</h6>
+                <form class="content-wrap" role="form" action="{% url 'bike_app:feedback' userid.useraccount.random_url %}" method="POST">
+                    {% csrf_token %}
+                    {% for field in form %}
+                        {% if field.name == 'Descriptions' %}
+                            <div class="fieldWrapper">
+                                <label for="{{ field.id_for_label }}" style="display: none;">Give us feedback :)</label>
+                                {{ field }}
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                    <div class="action">
+                        <div class="button">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
                     </div>
-                </div>           
-            </form>
+                </form>
             </div>
         </div>
     </div>

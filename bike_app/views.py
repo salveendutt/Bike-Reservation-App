@@ -8,7 +8,7 @@ from django.shortcuts import redirect            # Rediret
 # For Login and Logout
 from .models import UserAccount                  # User Account model
 from django.views.generic import TemplateView    # Template
-from .forms import AccountForm, AddAccountForm   # User Account Form
+from .forms import AccountForm, AddAccountForm, UserAccountForm
 from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponseRedirect, HttpResponse
 from django.urls import reverse
@@ -187,3 +187,24 @@ class Reservation_Page(CreateView):
 
 def FAQ(request):
     return render(request, "Main/FAQ.html",)
+
+
+@login_required
+def edit_user(request, url_uuid):
+
+    # Check user login and he has unique url
+    try:
+        user_account = UserAccount.objects.get(random_url=url_uuid)
+    except UserAccount.DoesNotExist:
+        # URL is not valid
+        return HttpResponseNotFound("Page not found")
+
+    if request.method == 'POST':
+        form = UserAccountForm(request.POST, instance=user_account)
+        if form.is_valid():
+            form.save()
+            return redirect(reverse('bike_app:edit_user', args=[request.user.useraccount.random_url]))
+    else:
+        form = UserAccountForm(instance=user_account)
+
+    return render(request, 'UserAuthentication/edit_user.html', {'form': form})

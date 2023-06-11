@@ -26,10 +26,21 @@ class AddAccountForm(forms.ModelForm):
 
 
 class ComplaintForm(forms.ModelForm):
-      class Meta():
-          # Complain Form
-          model = Complaint
-          fields = ('Descriptions', )
-          widgets = {
-              'Descriptions': forms.Textarea(attrs={'cols': 80, 'rows': 10}),
-          }
+    class Meta:
+        model = Complaint
+        fields = ('Descriptions',)
+        widgets = {
+            'Descriptions': forms.Textarea(attrs={'cols': 80, 'rows': 10, 'label': False}),
+        }
+
+class UserAccountForm(forms.ModelForm):
+    class Meta:
+        model = UserAccount
+        fields = ['name', 'surname', 'balance']
+
+    def save(self, commit=True):
+        instance = super().save(commit=False)
+        if commit:
+            instance.user.save()
+            instance.save()
+        return instance

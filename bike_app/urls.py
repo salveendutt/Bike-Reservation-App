@@ -34,4 +34,7 @@ urlpatterns = [
 
     # Q&A
     path('FAQ/', views.FAQ, name='FAQ'),
+
+    # Edit Profile
+    path('edit_user/<uuid:url_uuid>', views.edit_user, name='edit_user'),
 ]
