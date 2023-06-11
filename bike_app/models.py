@@ -49,7 +49,7 @@ class Complaint(models.Model):
     from django.db import models
 
 class Reservation(models.Model):
-    Reservation_id = models.CharField(primary_key=True, max_length=20)  #Reservation Id
+    Reservation_id = models.AutoField(primary_key=True) #Reservation Id
     start_day = models.DateField(default=timezone.now)
     finish_day = models.DateField(default=timezone.now)
     insurance = models.BooleanField(default=False)

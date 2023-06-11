@@ -1,8 +1,180 @@
-<h3> Reservation Form</h3>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f8f8f8;
+    }
 
-<form method="POST" action="">
-    {%csrf_token%}
-    {{form.as_p}}
+    h3 {
+        color: #333;
+        text-align: center;
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    form {
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: bold;
+    }
+
+    input[type="text"],
+    select {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        box-sizing: border-box;
+        font-size: 14px;
+        margin-bottom: 15px;
+    }
+
+    .input-with-calendar {
+        position: relative;
+    }
+
+    .calendar-icon {
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        transform: translateY(-50%);
+        font-size: 20px;
+        cursor: pointer;
+    }
+
+    input[type="submit"] {
+        background-color: #4caf50;
+        color: #fff;
+        border: none;
+        border-radius: 3px;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+        background-color: #45a049;
+    }
+
+    .error-message {
+        color: #f44336;
+        font-size: 12px;
+        margin-top: 5px;
+    }
+</style>
+
+<h3>Reservation Form</h3>
+
+<form method="POST" action="" id="reservationForm">
+    {% csrf_token %}
+    <div>
+        <label for="id_start_day">Start Day:</label>
+        <div class="input-with-calendar">
+            <input type="text" id="id_start_day" name="start_day" required>
+            <span id="startDayCalendar" class="calendar-icon">&#x1F4C5;</span>
+        </div>
+    </div>
+    <div>
+        <label for="id_finish_day">Finish Day:</label>
+        <div class="input-with-calendar">
+            <input type="text" id="id_finish_day" name="finish_day" required>
+            <span id="finishDayCalendar" class="calendar-icon">&#x1F4C5;</span>
+        </div>
+    </div>
+    <div>
+        <label for="id_insurance">Insurance:</label>
+        {{ form.insurance }}
+    </div>
+    <div>
+        <label for="id_delivery_method">Delivery Method:</label>
+        {{ form.delivery_method }}
+    </div>
+    <div id="pickupPointContainer">
+        <label for="id_pickup_point">Pickup Point:</label>
+        {{ form.pickup_point }}
+    </div>
     <input type="submit" value="Submit">
+    <p class="error-message"></p>
 </form>
 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+
+<script>
+    $(function() {
+        // Configure the datepicker for start_day field
+        $("#id_start_day").datepicker({
+            dateFormat: "yy-mm-dd",
+            onSelect: function(dateText, inst) {
+                $(this).val(dateText);
+                validateDateSelections();
+            }
+        });
+
+        // Configure the datepicker for finish_day field
+        $("#id_finish_day").datepicker({
+            dateFormat: "yy-mm-dd",
+            onSelect: function(dateText, inst) {
+                $(this).val(dateText);
+                validateDateSelections();
+            }
+        });
+
+        // Show the datepicker on clicking the calendar icon for start_day
+        $("#startDayCalendar").click(function() {
+            $("#id_start_day").datepicker("show");
+        });
+
+        // Show the datepicker on clicking the calendar icon for finish_day
+        $("#finishDayCalendar").click(function() {
+            $("#id_finish_day").datepicker("show");
+        });
+
+        // Hide/show the pickup_point field based on the selected delivery_method
+        $("#id_delivery_method").change(function() {
+            var deliveryMethod = $(this).val();
+            if (deliveryMethod === "delivery") {
+                $("#pickupPointContainer").hide();
+                $("#id_pickup_point").val(''); // Clear the value of pickup_point
+            } else {
+                $("#pickupPointContainer").show();
+            }
+        });
+
+        // Form submission validation
+        $("#reservationForm").submit(function(e) {
+            if (!$("#id_start_day").val() || !$("#id_finish_day").val() || !$("#id_delivery_method").val()) {
+                e.preventDefault();
+                alert("Please fill in all the required fields.");
+            }
+        });
+
+        // Date selection validation
+        function validateDateSelections() {
+            var startDay = new Date($("#id_start_day").val());
+            var finishDay = new Date($("#id_finish_day").val());
+            var today = new Date();
+            today.setHours(0, 0, 0, 0);
+
+            if (finishDay < startDay) {
+                $(".error-message").text("Finish day cannot be earlier than start day.");
+                $("input[type='submit']").prop("disabled", true);
+            } else if (startDay < today) {
+                $(".error-message").text("Start day cannot be earlier than tomorrow.");
+                $("input[type='submit']").prop("disabled", true);
+            } else {
+                $(".error-message").text("");
+                $("input[type='submit']").prop("disabled", false);
+            }
+        }
+    });
+</script>

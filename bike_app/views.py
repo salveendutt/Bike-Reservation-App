@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
-from .models import Reservation
+from .models import Reservation 
 from django.urls import reverse_lazy
 from django.views.generic.list import ListView 
 from django.views.generic.detail import DetailView
@@ -21,7 +21,7 @@ def Welcome_page(request):
 class ReservationCreate(CreateView):
     model = Reservation
     fields = '__all__'
-    success_url = reverse_lazy('reservations')
+    success_url = reverse_lazy('bike_app:reservations')
     #template_name = 'bike_app/reservation.html'
 
 class ReservationPage(DetailView):
@@ -36,8 +36,9 @@ class ReservationUpdate(UpdateView):
     model = Reservation
     fields = '__all__'
     success_url = reverse_lazy('bike_app:reservations')
+    #template_name = 'edit_reservation.hthml'
 
 class ReservationDelete(DeleteView):
     model=Reservation
     context_object_name='reservation'
-    success_url=reverse_lazy('reservations')
+    success_url=reverse_lazy('bike_app:reservations')

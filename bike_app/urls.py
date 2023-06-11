@@ -10,5 +10,7 @@ urlpatterns = [
     path('reserve/', ReservationCreate.as_view(), name='reserve'),
     path('reservation/<int:pk>/', ReservationPage.as_view(), name='reservation'),
     path('reservation-update/<int:pk>/', ReservationUpdate.as_view(), name='reservation-update'),
+    #path('reservation-delete/<int:pk>/', ReservationDelete.as_view(), name='reservation-delete'),
     path('reservation-delete/<int:pk>/', ReservationDelete.as_view(), name='reservation-delete'),
+    #path('edit/<str:reservation_id>/', ReservationUpdate.as_view(), name='reservation-update'),
 ]
