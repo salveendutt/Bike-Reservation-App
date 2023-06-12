@@ -19,6 +19,12 @@ from .models import Complaint
 from .models import BikeInfo
 from .forms import ComplaintForm
 
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.views.generic.list import ListView
+from django.views.generic.detail import DetailView
+from .models import Reservation
+from django.urls import reverse_lazy
+
 # User Register
 class AccountRegistration(TemplateView):
 
@@ -205,3 +211,43 @@ def edit_user(request, url_uuid):
         form = UserAccountForm(instance=user_account)
 
     return render(request, 'UserAuthentication/edit_user.html', {'form': form})
+
+
+####### Reservation ########
+class ReservationCreate(CreateView):
+    model = Reservation
+    fields = '__all__'
+    success_url = reverse_lazy('bike_app:reservations')
+    #template_name = 'bike_app/reservation.html'
+
+
+class ReservationPage(DetailView):
+    model = Reservation
+    context_object_name = 'reservation'
+
+
+class ReservationList(ListView):
+    model = Reservation
+    context_object_name = 'reservations'
+
+
+class ReservationUpdate(UpdateView):
+    model = Reservation
+    fields = '__all__'
+    success_url = reverse_lazy('bike_app:reservations')
+    #template_name = 'edit_reservation.hthml'
+
+
+class ReservationDelete(DeleteView):
+    model=Reservation
+    context_object_name='reservation'
+    success_url=reverse_lazy('bike_app:reservations')
+
+
+class Reservation_Page(CreateView):
+    model = Reservation
+    fields = '__all__'
+    success_url = reverse_lazy('home')
+    template_name = 'bike_app/reservation.html'
+
+
