@@ -3,8 +3,8 @@ from . import views
 from .views import Reservation_Page
 from django.conf import settings
 from django.conf.urls.static import static
+from .views import ReservationCreate
 from .views import ReservationPage, ReservationCreate, ReservationUpdate, ReservationList, ReservationDelete
-
 
 app_name = 'bike_app'
 
@@ -31,10 +31,7 @@ urlpatterns = [
     # path('bike_list/<uuid:url_uuid>', views.bike_list, name='bike_list'),    # unique URL
 
     # Reservation page
-    path('reserve/', Reservation_Page.as_view(), name='reserve'),
-
-    # Bike List Page
-    path('bikeList/<uuid:url_uuid>', views.bikeList_page, name='bikeList'),
+    # path('reserve/', Reservation_Page.as_view(), name='reserve'),
 
     # Q&A
     path('FAQ/', views.FAQ, name='FAQ'),

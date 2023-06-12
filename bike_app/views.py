@@ -214,11 +214,12 @@ def edit_user(request, url_uuid):
 
 
 ####### Reservation ########
+
 class ReservationCreate(CreateView):
     model = Reservation
     fields = '__all__'
-    success_url = reverse_lazy('bike_app:reservations')
-    #template_name = 'bike_app/reservation.html'
+    success_url = reverse_lazy('bike_app:reserve')
+    template_name = 'Main/reservation_form.html'
 
 
 class ReservationPage(DetailView):
@@ -235,19 +236,10 @@ class ReservationUpdate(UpdateView):
     model = Reservation
     fields = '__all__'
     success_url = reverse_lazy('bike_app:reservations')
-    #template_name = 'edit_reservation.hthml'
-
+    # template_name = 'edit_reservation.hthml'
 
 class ReservationDelete(DeleteView):
     model=Reservation
     context_object_name='reservation'
     success_url=reverse_lazy('bike_app:reservations')
-
-
-class Reservation_Page(CreateView):
-    model = Reservation
-    fields = '__all__'
-    success_url = reverse_lazy('home')
-    template_name = 'bike_app/reservation.html'
-
 
