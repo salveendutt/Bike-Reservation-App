@@ -1,6 +1,8 @@
 from django.urls import path
 from . import views
 from .views import Reservation_Page
+from django.conf import settings
+from django.conf.urls.static import static
 
 app_name = 'bike_app'
 
@@ -38,3 +40,6 @@ urlpatterns = [
     # Edit Profile
     path('edit_user/<uuid:url_uuid>', views.edit_user, name='edit_user'),
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -41,35 +41,39 @@
 							<th>BikeName</th>
 							<th>BikeType</th>
 							<th>Descriptions</th>
+                            <th>Price</th>
                             <th></th>
 						</tr>
 					</thead>
 					<tbody>
 						{% for bike in bike_list %}
-						<tr class="h40">
-                            <td>{{ bike.BikeCode }}</td>
-                            <td>
-                                <img src={{bike.image}} style="height: 120px; width: 155px;"/>
-                            </td>
+                            {% if not bike.isBroken %}
+                            <tr class="h40">
+                                <td>{{ bike.BikeCode }}</td>
+                                <td>
+                                    <img src={{bike.image.url}} style="height: 120px; width: 155px;"/>
+                                </td>
 
-							<td>{{ bike.BikeName }}</td>
-							<td>{{ bike.BikeType }}</td>
-							<td><div style="width: 500px;">{{ bike.Descriptions }}</div></td>
-							<td>
-                                <div style="padding-right: 10px;">
-                                    <button class="option-btn">
-                                        <a href="/reserve/">
-                                            reserve
+                                <td>{{ bike.BikeName }}</td>
+                                <td>{{ bike.BikeType }}</td>
+                                <td><div style="width: 500px;">{{ bike.Descriptions }}</div></td>
+                                <td>${{ bike.price }}</td>
+                                <td>
+                                    <div style="padding-right: 10px;">
+                                        <button class="option-btn">
+                                            <a href="/reserve/">
+                                                reserve
+                                            </a>
+                                        </button>
+                                    </div>
+                                    <!-- <button class="option-btn">
+                                        <a href="/drop_book/?id={{ book.book_id }}">
+                                            delete
                                         </a>
-                                    </button>
-                                </div>
-								<!-- <button class="option-btn">
-									<a href="/drop_book/?id={{ book.book_id }}">
-										delete
-									</a>
-								</button> -->
-							</td>
-						</tr>
+                                    </button> -->
+                                </td>
+                            </tr>
+                            {% endif %}
 						{% endfor %}
 					</tbody>
 				</table>

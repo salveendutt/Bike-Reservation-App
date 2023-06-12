@@ -58,12 +58,14 @@ class AccountRegistration(TemplateView):
 
             # Upgrade user account creation
             self.params["AccountCreate"] = True
+            return HttpResponseRedirect(reverse('bike_app:login'))
 
         else:
             # If the form is not valid
             print(self.params["account_form"].errors)
 
         return render(request, "UserAuthentication/register.html", context=self.params)
+
 
 # Log In
 def Login(request):
@@ -110,13 +112,8 @@ def Logout(request):
 
 # Home Page before log in
 def welcome(request):
-
-    if request.user.is_authenticated:
-        # If user has logged in => Redirect to user page
-        return redirect(reverse('bike_app:welcome_user', args=[request.user.useraccount.random_url]))
-    else:
-        # If user has not logged in => Redirect to login page
-        return render(request, 'Main/welcome_user.html', {'login_url': '/login/'})
+    # If user has not logged in => Redirect to login page
+    return render(request, 'Main/default.html')
 
 
 # Home Page after log in
