@@ -31,11 +31,7 @@ def FeedBack_page(request):
     return render(request, "complaint.html")
 
 
-class Reservation_Page(CreateView):
-    model = Reservation
-    fields = '__all__'
-    success_url = reverse_lazy('home')
-    template_name = 'bike_app/reservation.html'
+
 
 def add_complaint(request):
     if request.method == 'POST':
@@ -81,6 +77,14 @@ def recharge(request):
 
 def FAQ(request):
     return  render(request,'FAQ.html')
+
+
+# class Reservation_Page(CreateView):
+#     model = Reservation
+#     fields = '__all__'
+#     success_url = reverse_lazy('home')
+#     template_name = 'bike_app/reservation.html'
+
 
 class ReservationCreate(CreateView):
     model = Reservation
