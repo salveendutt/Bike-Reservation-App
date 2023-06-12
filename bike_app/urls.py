@@ -19,7 +19,7 @@ urlpatterns = [
     path('recharge/', views.recharge, name='recharge'),
     path('FAQ/',views.FAQ, name='FAQ'),
 
-    path('reserve/', Reservation_Page.as_view(), name='reserve'),
+    path('reserve/', ReservationCreate.as_view(), name='reserve'),
 
     #path('bike_list/', views.bike_list, name='bike_list'),
     #path('reserve/', Reservation_Page.as_view(), name='reserve'),
