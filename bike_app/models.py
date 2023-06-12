@@ -10,6 +10,7 @@ class CustomUser(AbstractBaseUser):
     surname = models.CharField(max_length=30)     # surname
     email = models.EmailField(unique=True)        # email address
     password = models.CharField(max_length=128)   # password
+    account = models.FloatField(max_length=50, default=0)
 
     USERNAME_FIELD = 'email'
 
@@ -20,7 +21,9 @@ class BikeInfo(models.Model):
     BikeType = models.CharField(max_length=20)                      #Bike Type
     Descriptions = models.CharField(max_length=300)                 #Bike Description
     BikePicture = models.CharField(max_length=20)                   #Bike Picture path
-    isFix=models.BooleanField(default=False)                          # Bike fix or not
+    BikeSize = models.CharField(max_length=300, default= "General")
+    BikePrice = models.CharField(max_length=20, default="999")
+    # isFix=models.BooleanField(default=False)                          # Bike fix or not
 
 
 class AdminInfo(models.Model):
@@ -36,7 +39,18 @@ class Complaint(models.Model):
 
 
 class Reservation(models.Model):
-    Reservation_id = models.AutoField(primary_key=True) #Reservation Id
+    BIKE_CHOICES = [
+        ('bike1', 'Bike 1'),
+        ('bike2', 'Bike 2'),
+        ('bike3', 'Bike 3')
+    ]
+    Reservation_id = models.CharField(primary_key=True, max_length=20)  #Reservation Id
+    Reservation_DateRequest = models.CharField(max_length=30)           #Reservation RequestStartDate
+    Reservation_DateEnd = models.CharField(max_length=30)               #Reservation RequestEndDate
+    Reservation_Bike = models.CharField(max_length=20, choices=BIKE_CHOICES) #bike Id
+    Reservation_status = models.CharField(max_length=20)                #status
+    Reservation_Number = models.CharField(max_length=5, default="000")
+#     Reservation_id = models.AutoField(primary_key=True) #Reservation Id
     start_day = models.DateField(default=timezone.now)
     finish_day = models.DateField(default=timezone.now)
     insurance = models.BooleanField(default=False)

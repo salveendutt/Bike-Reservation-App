@@ -1,0 +1,128 @@
+.box {
+    width: 100%;
+    height: 98vh;
+  }
+
+.flexDemo{
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-box{
+    width: 1200px;
+    height: 70%;
+    display: flex;
+}
+
+.item-text {
+    width: 600px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    background-color: #fff;
+    padding-left: 20px;
+}
+
+.h40{
+    height: 40px;
+}
+
+.order {
+    width: 80%;
+    height: 80%;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    background-color: #fff;
+    padding-right: 20px;
+  }
+  
+  .main {
+    background-color:orange;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* .head {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
+
+.btn {
+    width: 100%;
+    height: 100%;
+    background-color: #ccc;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.btn-p{
+    justify-content: center;
+    align-items: center;
+}
+.btn:hover{
+    background-color: orange;
+}
+
+.test {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: blueviolet;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dis-no {
+    display: none;
+}
+
+.animation {
+    animation: example1 1s linear;
+}
+
+.animation2 {
+    animation: example2 1s linear;
+}
+
+.mesh{
+    height: 80px;
+    width: 500px;
+    background-color: #ccc;
+}
+
+@keyframes example1 {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    50% {
+        transform: translateX(-50%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes example2 {
+    0% {
+        transform: translateX(100%);
+    }
+
+    50% {
+        transform: translateX(50%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+

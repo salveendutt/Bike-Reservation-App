@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+        .main {
+            background-image: url("../static/css/IMG/back2.jpg");
+            background-size: cover;
+            /* background-image: url("/static/css/IMG/FAQ.jpg");
+            background-size: cover; */
+            width: 100%;
+            height: 100%;
+            display: flex; 
+            justify-content: center;
+            align-items: center;
+        }
+
+        .btn {
+            width: 80%;
+            height: 60px;
+            font-size: large;
+            background-color: rgba(255,125,0,0.3);
+            box-shadow: 0 5px 12px rgba(0, 0, 0, 0.2);
+        }
+        .btn:hover{
+            background-color: transparent;
+            font-size: x-large;
+        }
+
+        .test {
+            position: absolute;
+            top: 0;
+            width: 59%;
+            height: 100%;
+            background-image: url("../static/css/IMG/back2.jpg");
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .test1 {
+            position: absolute;
+            top: 0;
+            /* right: 0; */
+            width: 59%;
+            height: 100%;
+            background-image: url("../static/css/IMG/back2.jpg");
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .test2 {
+            position: absolute;
+            top: 0;
+            /* right: 0; */
+            width: 59%;
+            height: 100%;
+            background-image: url("../static/css/IMG/back2.jpg");
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .test3 {
+            position: absolute;
+            top: 0;
+            /* right: 0; */
+            width: 59%;
+            height: 100%;
+            background-image: url("../static/css/IMG/back2.jpg");
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        
+        .table {
+            width: 100%;
+            height: 80%;
+            background-color: rgba(0,0,0,0.15);
+            background-size: cover;
+            border: 1px solid #ccc;
+            /* border-radius: 20px; */
+            /* background-color: #fff; */
+            padding-right: 20px;
+        }
+        .head1 {
+            /* background-color: rgba(0, 0, 0, 0.1); */
+            /* background-image: url("/static/css/IMG/FAQ.jpg"); */
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .dis-no {
+            display: none;
+        }
+
+        .animation {
+            animation: example1 1s linear;
+        }
+
+        .animation2 {
+            animation: example1 1s linear;
+        }
+
+
+        @keyframes example1 {
+            0% {
+                transform: translateX(-100%);
+            }
+
+            /* 50% {
+                transform: translateX(50%);
+            } */
+
+            100% {
+                transform: translateX(0);
+            }
+        }
+    
+        .h1_w {
+            color: black;
+            text-align:center;
+            animation: fade-in 3s;
+            animation-fill-mode:forwards;
+            font-size: xxx-large; 
+            padding-bottom: 10px; padding-top: 60px;
+        }
+
+    @keyframes fade-in{
+        0%{ opacity: 0;}
+        100%{opacity:1;}
+    }
+    .p_w{
+        font-style: italic ;
+        text-align: center;
+        opacity: 0;
+        animation: fade-in 3s;
+        animation-fill-mode:forwards;
+        font-size: x-large; 
+        font-weight: bold; 
+        padding-top: 20px;
+    }
+    </style>
+</head>
+
+
+<body>
+
+    <div class = "main">
+        <table class = "table">
+            <tr>
+                <td>
+                    <button onclick="tc()" id="btn" class="btn">How to register an account?</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button onclick="tb()" id="btn1" class="btn">How to Login?</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button onclick="ta()" id="btn2" class="btn">How to recharge?</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button onclick="td()" id="btn3" class="btn">Could I rent a bike without using funds in my account?</button>
+                </td>
+            </tr>
+        </table>
+        <div style="width: 70%; border-right: 2px solid black;">
+            <div style="width: 100%; height: 100%;">
+                <h1 class="head1 h1_w" style="border-bottom: 2px solid black; ">
+                    <button onclick="btt()" style=" background-color: transparent; border: 0; font-size: xxx-large;
+                    font-style:normal; ">FAQs</button></h1>
+                <div style="width: 100%;">
+                    <p class="p_w">
+                        There are some frequently asked questions as follows, which could help you to solve some problems. 
+                    </br></br>If you have some problems which are not included below, Please contact with us directly, 
+                </br></br>We're looking forward to your contact! <br/><br/>:) </p>
+                    <p style="color: transparent;">
+                        <br/><br/><br/>
+                        <br/><br/><br/>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="mengCeng" class="test dis-no">
+        <div style="background-color:rgba(255, 255, 255, 0.5)">
+            <h1 style="font-size: xxx-large; padding-left: 5px;">How to register an account ? :)</h1>
+            <p style="font-size:x-large; font-weight: bolder; padding-top: 30px;">
+                  There are three steps to register your account:  </p>
+            <ol style="padding-top: 10px; padding-left: 30px;">
+                <li style="font-size:x-large;">Click <b>'Register'</b> from welcome page</li>
+                <li style="font-size:x-large;">Enter your Email and password</li>
+                <li style="font-size:x-large;">If it shows success, you've already have an account!</li>
+            </ol>
+            <p style="font-size:large; font-weight: bold; padding-top: 20px; padding-left: 20px;">
+                Back to FAQ page, please refresh :)</p>
+                <p>...</p>
+        </div>
+    </div>
+    <div id="mengCeng1" class="test1 dis-no">
+        <div style="background-color:rgba(255, 255, 255, 0.5)">
+            <h1 style="font-size: xxx-large; padding-left: 5px;">How to Login ? :)</h1>
+            <p style="font-size:x-large; font-weight: bolder; padding-top: 30px;">
+                There are Three steps to login your account:</p>
+            <ol style="padding-top: 10px; padding-left: 40px;">
+                <li style="font-size:x-large;">Click <b>'Login'</b> from welcome page</li>
+                <li style="font-size:x-large;">Enter your Email and password</li>
+                <li style="font-size:x-large;">If it failed, please check your email address and password!</li>
+            </ol>
+            <p style="font-size:large; font-weight: bold; padding-top: 20px; padding-left: 20px;">
+                Back to FAQ page, please refresh :)</p>
+                <p>...</p>
+        </div>
+    </div>
+    <div id="mengCeng2" class="test2 dis-no">
+        <div style="background-color:rgba(255, 255, 255, 0.5)">
+            <h1 style="font-size: xxx-large; padding-left: 5px;">How to recharge ? :)</h1>
+            <p style="font-size:x-large; font-weight: bolder; padding-top: 30px;">
+                There are Five steps to recharge:</p>
+            <ol style="padding-top: 10px; padding-left: 40px;">
+                <li style="font-size:x-large;">Firstly you should login to your account.</li>
+                <li style="font-size:x-large;">Click '<b>Recharge</b>' buttton.</li>
+                <li style="font-size:x-large;">Choose the amount you want to recharge.</li>
+                <li style="font-size:x-large;">Choose the payment you prefer.</li>
+                <li style="font-size:x-large;">Verify your payment operation.</li>
+            </ol>
+            <p style="font-size:large; font-weight: bold; padding-top: 20px;">
+                ...If you want to recharge Now, click <a href="/recharge/">here</a></p>
+            <p style="font-size:large; font-weight: bold; padding-top: 20px;">
+                   Back to FAQ page, please refresh :)</p>
+                   <p>...</p>
+        </div>
+    </div>
+    <div id="mengCeng3" class="test3 dis-no">
+        <div style="background-color:rgba(255, 255, 255, 0.5)">
+            <h1 style="font-size: xxx-large; padding-left: 5px;">Could I rent a bike without using funds in my account ? :)</h1>
+            <p style="font-size:x-large; font-weight: bolder; padding-top: 30px;">
+                Actually, you could not directly pay for rental without recharging, maybe we will
+                improve it in the future, then for now, you could just use the funds in your wallet</p>
+            <ol style="padding-top: 10px; padding-left: 40px;">
+                <li style="font-size:x-large;">Firstly you should login to your account.</li>
+                <li style="font-size:x-large;">Click '<b>Recharge</b>' buttton.</li>
+                <li style="font-size:x-large;">Choose the amount you want to recharge.</li>
+                <li style="font-size:x-large;">Choose the payment you prefer.</li>
+                <li style="font-size:x-large;">Verify your payment operation.</li>
+            </ol>
+            <p style="font-size:large; font-weight: bold; padding-top: 20px;">
+                ...If you want to recharge Now, click <a href="/recharge/">here</a></p>
+            <p style="font-size:large; font-weight: bold; padding-top: 20px;">
+                ...If you still have confusion, please contact with us</p>
+            <p style="font-size:large; font-weight: bold; padding-top: 20px;">
+                   Back to FAQ page, please refresh :)</p>
+                   <p>...</p>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
+
+<script>
+    const mengCeng = document.getElementById('mengCeng')
+    let tc = () => {
+        mengCeng.className = 'test animation'
+    }
+    const mengCeng1 = document.getElementById('mengCeng1')
+    let tb = () => {
+        mengCeng1.className = 'test1 animation'
+    }
+    const mengCeng2 = document.getElementById('mengCeng2')
+    let ta = () => {
+        mengCeng2.className = 'test2 animation'
+    }
+    const mengCeng3 = document.getElementById('mengCeng3')
+    let td = () => {
+        mengCeng3.className = 'test3 animation'
+    }
+    let btt = () =>{
+        location.reload();
+    }
+</script>

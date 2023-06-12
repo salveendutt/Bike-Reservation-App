@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BikeRent</title>
+    <link rel="stylesheet" href="{% static 'css/welcome.css' %}">
+    <style>
+    .main {
+        background-image: url("/static/css/IMG/orangeb.jpg");
+        background-size: cover;
+        height: 100vh;
+    }
+</style>
+</head>
+<body id="body" style="position:relative;">
+    <div class="box flexDemo main" style="position:absolute; animation: slidein 1s ease-out 0s backwards;">
+        <div class="flex-box" style="height: 90%;">
+            {% for bike in bike_info%}
+            <div class="left-img">
+                    <div>
+                        <a href="../"><button class="backB">Back</button></a>
+                        <h1 style="flex: 0.5; text-align: center;animation: slidein 1s ease-out 0s backwards;">
+                            {{ bike.BikeName }}</h1>
+                    </div>
+                    <div>
+                        <img style = "padding-top: 30px; "src={{bike.BikePicture}} alt="Bike">
+                    </div>
+            </div>
+            <div class="right-content" style="animation: slidein 1s ease-out 0s backwards; text-align: center;">
+                <!-- <h4 style="flex: 1; padding-top: 30px;">Type</h4> -->
+                <div style="flex: 1; padding-top: 80px; padding-left: 82px; color: whitesmoke; width: 70%; font-size:30px;" class="right-text"> 
+                    {{ bike.BikeType }} 
+                </div>
+                <div class="right-text" style="flex: 1 ;  padding-left: 82px; color: whitesmoke; width: 70%; padding-top: 0px;" > 
+                    <p style="color: black;">Descriptions:</p>
+                    {{ bike.Descriptions }}<br/><br/>
+                    <p style="color: black;">Size:</p>
+                    {{ bike.BikeSize}}<br/><br/>
+                    <p style="color: black;">Price:</p> {{ bike.BikePrice}} Euro/day
+                </div>
+                <div style="flex: 1;" class="right-btn-box">
+
+                    <a href="/reserve/"><button class="BikeButton" style="text-align:center">Reserve</button></a>
+                    <!-- <a href="/bikeList/"><button class="BikeButton">More Info</button></a> -->
+                    <!-- <a href="/bike_list"></a> -->
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>

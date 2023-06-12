@@ -9,7 +9,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<link rel="stylesheet" href="{% static 'css/bikeList.css' %}">
-
 </head>
 
 <body class="login-bg">
@@ -17,7 +16,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="logo">
-					<h1>BIKES LIST</h1>
+					<h1>OUR BIKES</h1>
 				</div>
 			</div>
 		</div>
@@ -27,8 +26,8 @@
 	<div class="container">
 		<div class="row">
 			<div class="logout">
-				<a href="/login/">
-					<button class="btn">Log out</button>
+				<a href="../">
+					<button class="btn">Back to main page</button>
 				</a>
 			</div>
 			<div class="login-wrapper box content content-box dfc">
@@ -41,6 +40,7 @@
 							<th>BikeName</th>
 							<th>BikeType</th>
 							<th>Descriptions</th>
+							<th>Price</th>
                             <th></th>
 						</tr>
 					</thead>
@@ -53,6 +53,7 @@
 							<td>{{ bike.BikeName }}</td>
 							<td>{{ bike.BikeType }}</td>
 							<td><div style="width: 500px;">{{ bike.Descriptions }}</div></td>
+							<td>{{ bike.BikePrice}}</td>
 							<td>
                                 <div style="padding-right: 10px;">
                                     <button class="option-btn">

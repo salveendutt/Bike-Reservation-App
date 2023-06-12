@@ -1,0 +1,554 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/recharge.css' %}">
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+        /* -------------------------------------- */
+        .box {
+    width: 100%;
+    height: 98vh;
+  }
+
+.flexDemo{
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-box{
+    width: 1200px;
+    height: 70%;
+    display: flex;
+}
+
+.item-text {
+    width: 600px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    background-color: #fff;
+    padding-left: 20px;
+}
+
+.h40{
+    height: 40px;
+}
+
+.order {
+    width: 80%;
+    height: 80%;
+    border: 2px solid #ccc;
+    border-radius: 20px;
+    /* background-color: #fff; */
+    background-color: rgba(0, 0, 0, 0.3);
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.5);
+    padding-right: 20px;
+  }
+  
+  .main {
+    background-image: url("../static/css/IMG/pay1.jpg");
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.5);
+}
+
+.btn {
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    border-radius: 0%;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: large;
+    color: #fff;
+}
+.btn-p{
+    justify-content: center;
+    align-items: center;
+}
+.btn:hover{
+    background-color: rgba(255,255,255,0.7);
+    font-size: larger;
+    font-weight: bold;
+    color: black;
+}
+
+.test {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("../static/css/IMG/pay1.jpg");
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dis-no {
+    display: none;
+}
+
+.animation {
+    animation: example1 1s linear;
+}
+
+.animation2 {
+    animation: example2 1s linear;
+}
+
+.mesh{
+    height: 80px;
+    width: 500px;
+    background-color: rgba(255, 145, 0, 0.3);
+}
+
+@keyframes example1 {
+    0% {
+        transform: translateY(-100%);
+    }
+
+    50% {
+        transform: translateY(-50%);
+    }
+
+    100% {
+        transform: translateY(0%);
+    }
+}
+
+@keyframes example2 {
+    0% {
+        transform: translateY(-100%);
+    }
+
+    50% {
+        transform: translateY(-50%);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+    
+}
+label, input, textarea{
+    margin-bottom: 20px;
+}
+.chaB{
+    background-color: transparent; 
+    border: 0; 
+    font-size: large;
+    text-decoration: underline;
+}
+.chaB:hover{
+    cursor: pointer;
+}
+.paywindow{
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
+}
+.paywindow1{
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.5);
+    border:solid 3px rgba(0, 0, 0, 0.5);
+    background-color:rgba(255, 255, 255, 0.7);
+}
+
+    </style>
+</head>
+
+
+<body>
+    <div class="main">
+        <div class="order paywindow">
+            <!-- <img src="../static/css/IMG/Logo.jpg" style="height:80px; top:20; left: 20; position: absolute;"> -->
+            <div class="head">
+                <p style="font-size: xx-large; text-shadow: 2px 2px 4px rgba(255, 160, 0, 0.7);
+                font-weight: bolder; padding-left: 50px; color: #fff;">
+                    ADD FUNDS TO YOUR WALLET
+                </p>
+            </div>
+            <div class="head">
+                <p style="font-size: x-large; text-decoration: underline; padding-left: 50px; color: #fff; padding-top: 25px;">
+                    Funds your wallet may be used for the rental of any bikes on website. You’ll have a chance to review your order before it’s placed.</p></div>
+            <table style="padding-top: 30px;" class="paywindow">
+             <tr>
+                <td class="mesh btn-p" ><button onclick="ta()" id="btn" class="btn">Add 20,00 Euro(Minimum fund level)</button></td>
+                <td class="mesh btn-p" ><button onclick="tb()" id="btn" class="btn">Add 30,00 Euro</button></td>
+             </tr>
+             <tr></tr>
+             <tr>
+                <td class="mesh btn-p"><button onclick="tc()" id="btn" class="btn">Add 50,00 Euro</button></td>
+                <td class="mesh btn-p"><button onclick="td()" id="btn" class="btn">Add 60,00 Euro</button></td>
+             </tr>
+             <tr></tr>
+             <tr>
+                <td class="mesh btn-p"><button onclick="te()" id="btn" class="btn">Add 80,00 Euro</button></td>
+                <td class="mesh btn-p"><button onclick="tf()" id="btn" class="btn">Add 90,00 Euro</button></td>
+             </tr>
+             <tr></tr>
+             <tr>
+                <td class="mesh btn-p"><button onclick="tg()" id="btn" class="btn">Add 100,00 Euro</button></td>
+                <td class="mesh btn-p"><button onclick="th()" id="btn" class="btn">Add 115,00 Euro</button></td>
+             </tr>
+            </table>
+        </div>
+    </div>
+
+
+    <div id="mengCeng" class="test dis-no">
+        <div style="display: flex;" class="paywindow1">
+            <div style="padding-left: 50px;">
+                <h1 style="font-size: xx-large; padding-top: 90px;">Verify your account</h1>
+                <p style="font-size:x-large; font-weight: bolder; padding-top: 30px;">
+                    Your Login:<br/>
+                </p>
+                <h1 style="font-size: xx-large; padding-top: 50px;">Verify the amount</h1>
+                <p style="font-size:x-large; font-weight: bolder; padding-top: 30px;">
+                    Total:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;20 Euro</p>
+                    <button class="chaB" onclick="cha()">change amount</button>
+                </p>
+            </div>
+            <div style="color: transparent;"><br/>-------------------- <br/></div>
+            <div>
+                <h1 style="font-size: xx-large; padding-right: 50px; padding-top: 10px;">Choose your payment method</h1>
+                <div style="display: flex;">
+                    <img src="../static/css/IMG/apple.png" 
+                    style="width: 80px;height: 60px; padding-left: 50px; padding-right: 20px; padding-top: 30px">
+                    <img src="../static/css/IMG/visa.png" style="width: 90px;height: 60px; padding-right: 20px; padding-top: 30px">
+                    <img src="../static/css/IMG/master.png" style="width: 140px;height: 60px; padding-right: 20px; padding-top: 30px">
+                </div>
+                <div style="padding-top: 50px; padding-left: 50px; padding-bottom: 20px;">
+                    <form action="/submit" method="post" style="display: flex; flex-direction: column;">
+                        <label for="cvc" style="font-size: large;">Your Card Number:</label>
+                        <input type="text" id="card" name="card" style=" height: 30px; width: 80%;" required>
+                      
+                        <label for="cvc">CVC Code:</label>
+                        <input type="cvc" id="cvc" name="cvc" style=" height: 30px; width: 80%;" required>
+                      
+                        <input type="submit" value="Pay" style=" height: 50px; width: 80%;">
+                      </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="mengCeng1" class="test dis-no">
+        <div style="background-color:rgba(255, 255, 255, 0.5); display: flex;" class="paywindow1">
+            <div style="padding-left: 50px;">
+                <h1 style="font-size: xx-large; padding-top: 90px;">Verify your account</h1>
+                <p style="font-size:x-large; font-weight: bolder; padding-top: 30px;">
+                    Your Login:<br/>
+                </p>
+                <h1 style="font-size: xx-large; padding-top: 50px;">Verify the amount</h1>
+                <p style="font-size:x-large; font-weight: bolder; padding-top: 30px;">
+                    Total:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;30 Euro</p>
+                    <button class="chaB" onclick="cha()">change amount</button>
+                </p>
+            </div>
+            <div style="color: transparent;"><br/>-------------------- <br/></div>
+            <div>
+                <h1 style="font-size: xx-large; padding-right: 50px; padding-top: 10px;">Choose your payment method</h1>
+                <div style="display: flex;">
+                    <img src="../static/css/IMG/apple.png" 
+                    style="width: 80px;height: 60px; padding-left: 50px; padding-right: 20px; padding-top: 30px">
+                    <img src="../static/css/IMG/visa.png" style="width: 90px;height: 60px; padding-right: 20px; padding-top: 30px">
+                    <img src="../static/css/IMG/master.png" style="width: 140px;height: 60px; padding-right: 20px; padding-top: 30px">
+                </div>
+                <div style="padding-top: 50px; padding-left: 50px; padding-bottom: 20px;">
+                    <form action="/submit" method="post" style="display: flex; flex-direction: column;">
+                        <label for="cvc" style="font-size: large;">Your Card Number:</label>
+                        <input type="text" id="card" name="card" style=" height: 30px; width: 80%;" required>
+                      
+                        <label for="cvc">CVC Code:</label>
+                        <input type="cvc" id="cvc" name="cvc" style=" height: 30px; width: 80%;" required>
+                      
+                        <input type="submit" value="Pay" style=" height: 50px; width: 80%;">
+                      </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="mengCeng2" class="test dis-no">
+        <div style="background-color:rgba(255, 255, 255, 0.5); display: flex;" class="paywindow1">
+            <div style="padding-left: 50px;">
+                <h1 style="font-size: xx-large; padding-top: 90px;">Verify your account</h1>
+                <p style="font-size:x-large; font-weight: bolder; padding-top: 30px;">
+                    Your Login:<br/>
+                </p>
+                <h1 style="font-size: xx-large; padding-top: 50px;">Verify the amount</h1>
+                <p style="font-size:x-large; font-weight: bolder; padding-top: 30px;">
+                    Total:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;50 Euro</p>
+                    <button class="chaB" onclick="cha()">change amount</button>
+                </p>
+            </div>
+            <div style="color: transparent;"><br/>-------------------- <br/></div>
+            <div>
+                <h1 style="font-size: xx-large; padding-right: 50px; padding-top: 10px;">Choose your payment method</h1>
+                <div style="display: flex;">
+                    <img src="../static/css/IMG/apple.png" 
+                    style="width: 80px;height: 60px; padding-left: 50px; padding-right: 20px; padding-top: 30px">
+                    <img src="../static/css/IMG/visa.png" style="width: 90px;height: 60px; padding-right: 20px; padding-top: 30px">
+                    <img src="../static/css/IMG/master.png" style="width: 140px;height: 60px; padding-right: 20px; padding-top: 30px">
+                </div>
+                <div style="padding-top: 50px; padding-left: 50px; padding-bottom: 20px;">
+                    <form action="/submit" method="post" style="display: flex; flex-direction: column;">
+                        <label for="cvc" style="font-size: large;">Your Card Number:</label>
+                        <input type="text" id="card" name="card" style=" height: 30px; width: 80%;" required>
+                      
+                        <label for="cvc">CVC Code:</label>
+                        <input type="cvc" id="cvc" name="cvc" style=" height: 30px; width: 80%;" required>
+                      
+                        <input type="submit" value="Pay" style=" height: 50px; width: 80%;">
+                      </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="mengCeng3" class="test dis-no">
+        <div style="background-color:rgba(255, 255, 255, 0.5); display: flex;" class="paywindow1">
+            <div style="padding-left: 50px;">
+                <h1 style="font-size: xx-large; padding-top: 90px;">Verify your account</h1>
+                <p style="font-size:x-large; font-weight: bolder; padding-top: 30px;">
+                    Your Login:<br/>
+                </p>
+                <h1 style="font-size: xx-large; padding-top: 50px;">Verify the amount</h1>
+                <p style="font-size:x-large; font-weight: bolder; padding-top: 30px;">
+                    Total:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;60 Euro</p>
+                    <button class="chaB" onclick="cha()">change amount</button>
+                </p>
+            </div>
+            <div style="color: transparent;"><br/>-------------------- <br/></div>
+            <div>
+                <h1 style="font-size: xx-large; padding-right: 50px; padding-top: 10px;">Choose your payment method</h1>
+                <div style="display: flex;">
+                    <img src="../static/css/IMG/apple.png" 
+                    style="width: 80px;height: 60px; padding-left: 50px; padding-right: 20px; padding-top: 30px">
+                    <img src="../static/css/IMG/visa.png" style="width: 90px;height: 60px; padding-right: 20px; padding-top: 30px">
+                    <img src="../static/css/IMG/master.png" style="width: 140px;height: 60px; padding-right: 20px; padding-top: 30px">
+                </div>
+                <div style="padding-top: 50px; padding-left: 50px; padding-bottom: 20px;">
+                    <form action="/submit" method="post" style="display: flex; flex-direction: column;">
+                        <label for="cvc" style="font-size: large;">Your Card Number:</label>
+                        <input type="text" id="card" name="card" style=" height: 30px; width: 80%;" required>
+                      
+                        <label for="cvc">CVC Code:</label>
+                        <input type="cvc" id="cvc" name="cvc" style=" height: 30px; width: 80%;" required>
+                      
+                        <input type="submit" value="Pay" style=" height: 50px; width: 80%;">
+                      </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="mengCeng4" class="test dis-no">
+        <div style="background-color:rgba(255, 255, 255, 0.5); display: flex;" class="paywindow1">
+            <div style="padding-left: 50px;">
+                <h1 style="font-size: xx-large; padding-top: 90px;">Verify your account</h1>
+                <p style="font-size:x-large; font-weight: bolder; padding-top: 30px;">
+                    Your Login:<br/>
+                </p>
+                <h1 style="font-size: xx-large; padding-top: 50px;">Verify the amount</h1>
+                <p style="font-size:x-large; font-weight: bolder; padding-top: 30px;">
+                    Total:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;80 Euro</p>
+                    <button class="chaB" onclick="cha()">change amount</button>
+                </p>
+            </div>
+            <div style="color: transparent;"><br/>-------------------- <br/></div>
+            <div>
+                <h1 style="font-size: xx-large; padding-right: 50px; padding-top: 10px;">Choose your payment method</h1>
+                <div style="display: flex;">
+                    <img src="../static/css/IMG/apple.png" 
+                    style="width: 80px;height: 60px; padding-left: 50px; padding-right: 20px; padding-top: 30px">
+                    <img src="../static/css/IMG/visa.png" style="width: 90px;height: 60px; padding-right: 20px; padding-top: 30px">
+                    <img src="../static/css/IMG/master.png" style="width: 140px;height: 60px; padding-right: 20px; padding-top: 30px">
+                </div>
+                <div style="padding-top: 50px; padding-left: 50px; padding-bottom: 20px;">
+                    <form action="/submit" method="post" style="display: flex; flex-direction: column;">
+                        <label for="cvc" style="font-size: large;">Your Card Number:</label>
+                        <input type="text" id="card" name="card" style=" height: 30px; width: 80%;" required>
+                      
+                        <label for="cvc">CVC Code:</label>
+                        <input type="cvc" id="cvc" name="cvc" style=" height: 30px; width: 80%;" required>
+                      
+                        <input type="submit" value="Pay" style=" height: 50px; width: 80%;">
+                      </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="mengCeng5" class="test dis-no">
+        <div style="background-color:rgba(255, 255, 255, 0.5); display: flex;" class="paywindow1">
+            <div style="padding-left: 50px;">
+                <h1 style="font-size: xx-large; padding-top: 90px;">Verify your account</h1>
+                <p style="font-size:x-large; font-weight: bolder; padding-top: 30px;">
+                    Your Login:<br/>
+                </p>
+                <h1 style="font-size: xx-large; padding-top: 50px;">Verify the amount</h1>
+                <p style="font-size:x-large; font-weight: bolder; padding-top: 30px;">
+                    Total:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;90 Euro</p>
+                    <button class="chaB" onclick="cha()">change amount</button>
+                </p>
+            </div>
+            <div style="color: transparent;"><br/>-------------------- <br/></div>
+            <div>
+                <h1 style="font-size: xx-large; padding-right: 50px; padding-top: 10px;">Choose your payment method</h1>
+                <div style="display: flex;">
+                    <img src="../static/css/IMG/apple.png" 
+                    style="width: 80px;height: 60px; padding-left: 50px; padding-right: 20px; padding-top: 30px">
+                    <img src="../static/css/IMG/visa.png" style="width: 90px;height: 60px; padding-right: 20px; padding-top: 30px">
+                    <img src="../static/css/IMG/master.png" style="width: 140px;height: 60px; padding-right: 20px; padding-top: 30px">
+                </div>
+                <div style="padding-top: 50px; padding-left: 50px; padding-bottom: 20px;">
+                    <form action="/submit" method="post" style="display: flex; flex-direction: column;">
+                        <label for="cvc" style="font-size: large;">Your Card Number:</label>
+                        <input type="text" id="card" name="card" style=" height: 30px; width: 80%;" required>
+                      
+                        <label for="cvc">CVC Code:</label>
+                        <input type="cvc" id="cvc" name="cvc" style=" height: 30px; width: 80%;" required>
+                      
+                        <input type="submit" value="Pay" style=" height: 50px; width: 80%;">
+                      </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="mengCeng6" class="test dis-no">
+        <div style="background-color:rgba(255, 255, 255, 0.5); display: flex;" class="paywindow1">
+            <div style="padding-left: 50px;">
+                <h1 style="font-size: xx-large; padding-top: 90px;">Verify your account</h1>
+                <p style="font-size:x-large; font-weight: bolder; padding-top: 30px;">
+                    Your Login:<br/>
+                </p>
+                <h1 style="font-size: xx-large; padding-top: 50px;">Verify the amount</h1>
+                <p style="font-size:x-large; font-weight: bolder; padding-top: 30px;">
+                    Total:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;100 Euro</p>
+                    <button class="chaB" onclick="cha()">change amount</button>
+                </p>
+            </div>
+            <div style="color: transparent;"><br/>-------------------- <br/></div>
+            <div>
+                <h1 style="font-size: xx-large; padding-right: 50px; padding-top: 10px;">Choose your payment method</h1>
+                <div style="display: flex;">
+                    <img src="../static/css/IMG/apple.png" 
+                    style="width: 80px;height: 60px; padding-left: 50px; padding-right: 20px; padding-top: 30px">
+                    <img src="../static/css/IMG/visa.png" style="width: 90px;height: 60px; padding-right: 20px; padding-top: 30px">
+                    <img src="../static/css/IMG/master.png" style="width: 140px;height: 60px; padding-right: 20px; padding-top: 30px">
+                </div>
+                <div style="padding-top: 50px; padding-left: 50px; padding-bottom: 20px;">
+                    <form action="/submit" method="post" style="display: flex; flex-direction: column;">
+                        <label for="cvc" style="font-size: large;">Your Card Number:</label>
+                        <input type="text" id="card" name="card" style=" height: 30px; width: 80%;" required>
+                      
+                        <label for="cvc">CVC Code:</label>
+                        <input type="cvc" id="cvc" name="cvc" style=" height: 30px; width: 80%;" required>
+                      
+                        <input type="submit" value="Pay" style=" height: 50px; width: 80%;">
+                      </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="mengCeng7" class="test dis-no">
+        <div style="background-color:rgba(255, 255, 255, 0.5); display: flex;" class="paywindow1">
+            <div style="padding-left: 50px;">
+                <h1 style="font-size: xx-large; padding-top: 90px;">Verify your account</h1>
+                <p style="font-size:x-large; font-weight: bolder; padding-top: 30px;">
+                    Your Login:<br/>
+                </p>
+                <h1 style="font-size: xx-large; padding-top: 50px;">Verify the amount</h1>
+                <p style="font-size:x-large; font-weight: bolder; padding-top: 30px;">
+                    Total:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;115 Euro</p>
+                    <button class="chaB" onclick="cha()">change amount</button>
+                </p>
+            </div>
+            <div style="color: transparent;"><br/>-------------------- <br/></div>
+            <div>
+                <h1 style="font-size: xx-large; padding-right: 50px; padding-top: 10px;">Choose your payment method</h1>
+                <div style="display: flex;">
+                    <img src="../static/css/IMG/apple.png" 
+                    style="width: 80px;height: 60px; padding-left: 50px; padding-right: 20px; padding-top: 30px">
+                    <img src="../static/css/IMG/visa.png" style="width: 90px;height: 60px; padding-right: 20px; padding-top: 30px">
+                    <img src="../static/css/IMG/master.png" style="width: 140px;height: 60px; padding-right: 20px; padding-top: 30px">
+                </div>
+                <div style="padding-top: 50px; padding-left: 50px; padding-bottom: 20px;">
+                    <form action="/submit" method="post" style="display: flex; flex-direction: column;">
+                        <label for="cvc" style="font-size: large;">Your Card Number:</label>
+                        <input type="text" id="card" name="card" style=" height: 30px; width: 80%;" required>
+                      
+                        <label for="cvc">CVC Code:</label>
+                        <input type="cvc" id="cvc" name="cvc" style=" height: 30px; width: 80%;" required>
+                      
+                        <input type="submit" value="Pay" style=" height: 50px; width: 80%;">
+                      </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script>
+    const mengCeng = document.getElementById('mengCeng')
+    let ta = () => {
+        mengCeng.className = 'test animation'
+    }
+    const mengCeng1 = document.getElementById('mengCeng1')
+    let tb = () => {
+        mengCeng1.className = 'test animation2'
+    }
+    const mengCeng2 = document.getElementById('mengCeng2')
+    let tc = () => {
+        mengCeng2.className = 'test animation'
+    }
+    const mengCeng3 = document.getElementById('mengCeng3')
+    let td = () => {
+        mengCeng3.className = 'test animation2'
+    }
+    const mengCeng4 = document.getElementById('mengCeng4')
+    let te = () => {
+        mengCeng4.className = 'test animation'
+    }
+    const mengCeng5 = document.getElementById('mengCeng5')
+    let tf = () => {
+        mengCeng5.className = 'test animation2'
+    }
+    const mengCeng6 = document.getElementById('mengCeng6')
+    let tg = () => {
+        mengCeng6.className = 'test animation'
+    }
+    const mengCeng7 = document.getElementById('mengCeng7')
+    let th = () => {
+        mengCeng7.className = 'test animation2'
+    }
+    let cha = () => {
+        location.reload();
+    }
+
+</script>
